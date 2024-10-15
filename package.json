@@ -1,0 +1,60 @@
+{
+  "name": "universal-admin-frontend",
+  "version": "1.0.0",
+  "description": "Universal admin frontend",
+  "keywords": [
+    "universal",
+    "admin",
+    "frontend"
+  ],
+  "author": "fourdusk",
+  "license": "MIT",
+  "main": "src/main.ts",
+  "type": "module",
+  "scripts": {
+    "prepare": "husky && panda codegen",
+    "dev": "vite",
+    "build": "vue-tsc -b && vite build",
+    "preview": "vite preview",
+    "eslint": "eslint --fix **/*.{vue,js,jsx,ts,tsx}",
+    "prettier": "prettier --write **/*.{vue,js,jsx,ts,tsx,json,md,css,html}",
+    "stylelint": "stylelint --fix **/*.{vue,css,html}",
+    "lint-staged": "lint-staged --config ./lint-staged.config.js"
+  },
+  "dependencies": {
+    "@vueuse/core": "^11.1.0",
+    "vue": "^3.5.12"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^19.5.0",
+    "@commitlint/config-conventional": "^19.5.0",
+    "@commitlint/types": "^19.5.0",
+    "@pandacss/dev": "^0.46.1",
+    "@types/node": "^22.7.5",
+    "@typescript-eslint/eslint-plugin": "^7.18.0",
+    "@typescript-eslint/parser": "^7.18.0",
+    "@vitejs/plugin-vue": "^5.1.4",
+    "@vitejs/plugin-vue-jsx": "^4.0.1",
+    "autoprefixer": "^10.4.20",
+    "eslint": "^8.57.1",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-define-config": "^2.1.0",
+    "eslint-plugin-simple-import-sort": "^12.1.1",
+    "eslint-plugin-vue": "^9.29.0",
+    "husky": "^9.1.6",
+    "lint-staged": "^15.2.10",
+    "postcss": "^8.4.47",
+    "postcss-html": "^1.7.0",
+    "postcss-load-config": "^6.0.1",
+    "prettier": "^3.3.3",
+    "stylelint": "^16.10.0",
+    "stylelint-config-recess-order": "^5.1.1",
+    "typescript": "^5.6.3",
+    "unplugin-auto-import": "^0.18.3",
+    "unplugin-icons": "^0.19.3",
+    "unplugin-vue-components": "^0.27.4",
+    "vite": "^5.4.8",
+    "vue-eslint-parser": "^9.4.3",
+    "vue-tsc": "^2.1.6"
+  }
+}
