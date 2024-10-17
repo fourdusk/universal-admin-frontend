@@ -9,7 +9,7 @@ generateApi({
   // ts 文件输出目录
   // output: resolve(process.cwd(), './swagger/api'),
   // 模板目录
-  templates: resolve(process.cwd(), './swagger/templates/modular'),
+  templates: resolve(process.cwd(), './swagger/templates'),
   // 客户端类型
   httpClientType: 'axios',
   // 是否清除输出目录
@@ -35,7 +35,13 @@ generateApi({
   // 类型后缀
   typeSuffix: '',
   // prettier 配置
-  prettier: prettierConfig
+  prettier: prettierConfig,
+  hooks: {
+    onPrepareConfig(currentConfiguration) {
+      currentConfiguration.apiConfig.baseUrl = '/api'
+      return currentConfiguration
+    },
+  }
 }).then(({ files }) => {
   const dir = resolve(process.cwd(), './swagger/api')
   if (existsSync(dir)) {

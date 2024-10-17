@@ -25,12 +25,12 @@ export interface PostRoleCreatePayload {
   delFlag?: 'Y' | 'N'
   /**
    * 创建时间
-   * @default 1729130957503
+   * @default 1729149009087
    */
   createdAt?: number
   /**
    * 更新时间
-   * @default 1729130957503
+   * @default 1729149009087
    */
   updatedAt?: number
   /** 创建人 */
@@ -64,12 +64,12 @@ export interface PostRoleUpdatePayload {
   delFlag: 'Y' | 'N'
   /**
    * 创建时间
-   * @default 1729130957503
+   * @default 1729149009087
    */
   createdAt: number
   /**
    * 更新时间
-   * @default 1729130957503
+   * @default 1729149009087
    */
   updatedAt: number
   /** 创建人 */
@@ -157,12 +157,12 @@ export interface PostResourceCreatePayload {
   delFlag?: 'Y' | 'N'
   /**
    * 创建时间
-   * @default 1729130957503
+   * @default 1729149009087
    */
   createdAt?: number
   /**
    * 更新时间
-   * @default 1729130957503
+   * @default 1729149009087
    */
   updatedAt?: number
   /** 创建人 */
@@ -246,12 +246,12 @@ export interface PostResourceUpdatePayload {
   delFlag: 'Y' | 'N'
   /**
    * 创建时间
-   * @default 1729130957503
+   * @default 1729149009087
    */
   createdAt: number
   /**
    * 更新时间
-   * @default 1729130957503
+   * @default 1729149009087
    */
   updatedAt: number
   /** 创建人 */
@@ -527,12 +527,12 @@ export interface PostUserToRoleCreatePayload {
   delFlag?: 'Y' | 'N'
   /**
    * 创建时间
-   * @default 1729130957503
+   * @default 1729149009087
    */
   createdAt?: number
   /**
    * 更新时间
-   * @default 1729130957503
+   * @default 1729149009087
    */
   updatedAt?: number
   /** 创建人 */
@@ -650,12 +650,12 @@ export interface PostRoleToResourceCreatePayload {
   delFlag?: 'Y' | 'N'
   /**
    * 创建时间
-   * @default 1729130957503
+   * @default 1729149009087
    */
   createdAt?: number
   /**
    * 更新时间
-   * @default 1729130957503
+   * @default 1729149009087
    */
   updatedAt?: number
   /** 创建人 */
@@ -777,12 +777,12 @@ export interface PostUserCreatePayload {
   delFlag?: 'Y' | 'N'
   /**
    * 创建时间
-   * @default 1729130957503
+   * @default 1729149009087
    */
   createdAt?: number
   /**
    * 更新时间
-   * @default 1729130957503
+   * @default 1729149009087
    */
   updatedAt?: number
   /** 创建人 */
@@ -823,12 +823,12 @@ export interface PostUserUpdatePayload {
   delFlag: 'Y' | 'N'
   /**
    * 创建时间
-   * @default 1729130957503
+   * @default 1729149009087
    */
   createdAt: number
   /**
    * 更新时间
-   * @default 1729130957503
+   * @default 1729149009087
    */
   updatedAt: number
   /** 创建人 */

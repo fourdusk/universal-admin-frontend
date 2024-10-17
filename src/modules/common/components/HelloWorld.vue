@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { css } from 'styled/css'
 import { Auth } from 'swagger/api/Auth'
+import { User } from 'swagger/api/User'
 import { ref } from 'vue'
 
 defineOptions({
@@ -13,22 +14,34 @@ interface Props {
 
 const props = defineProps<Props>()
 
-const sum = ref(gbUtils.sum([1, 2, 3]))
 const username = ref('')
 const password = ref('')
 const signInResult = ref({})
-const styles = css({
+const userFindResult = ref({})
+const buttonStyles = css({
   backgroundColor: 'pink.700',
   color: 'white',
-  padding: '0.5rem 1rem',
-  border: '2px solid {colors.pink.700}',
-  borderRadius: '3px'
+  border: '0',
+  padding: '0 1rem',
+  borderRadius: '3px',
+  height: '2rem'
+})
+const boxStyles = css({
+  display: 'flex',
+  gap: '0.25rem',
+  margin: '1rem 0'
 })
 
 const handleSignIn = async () => {
-  const auth = new Auth({ baseURL: '/api' })
+  const auth = new Auth()
   const result = await auth.postAuthSignIn({ username: username.value, password: password.value })
   signInResult.value = result
+}
+
+const handleGetUserList = async () => {
+  const user = new User()
+  const result = await user.postUserFind({})
+  userFindResult.value = result
 }
 </script>
 
@@ -43,7 +56,11 @@ const handleSignIn = async () => {
       <label for="">密码</label>
       <input v-model="password" />
     </div>
-    <button :class="styles" type="button" @click="handleSignIn">{{ sum }}</button>
-    <div>{{ signInResult }}</div>
+    <div :class="boxStyles">
+      <button :class="buttonStyles" type="button" @click="handleSignIn">登录</button>
+      <button :class="buttonStyles" type="button" @click="handleGetUserList">获取用户列表</button>
+    </div>
+    <div>登录结果：{{ signInResult }}</div>
+    <div>获取用户列表结果：{{ userFindResult }}</div>
   </form>
 </template>

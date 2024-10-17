@@ -8,9 +8,5 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     HelloWorld: typeof import('./../components/HelloWorld.vue')['default']
-    ViChevronDown: typeof import('~icons/vi/chevron-down')['default']
-    ViChevronLeft: typeof import('~icons/vi/chevron-left')['default']
-    ViChevronRight: typeof import('~icons/vi/chevron-right')['default']
-    ViChevronUp: typeof import('~icons/vi/chevron-up')['default']
   }
 }
