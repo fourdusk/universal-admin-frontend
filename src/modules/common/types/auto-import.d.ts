@@ -6,5 +6,5 @@
 // biome-ignore lint: disable
 export {}
 declare global {
-  const gbUtils: (typeof import('../utils/expose/index'))['gbUtils']
+  const gbUtils: typeof import('../utils/expose/index')['gbUtils']
 }
