@@ -1,4 +1,4 @@
-import './modules/common/styles/index.css'
+import './global/styles/index.css'
 
 import { createApp } from 'vue'
 

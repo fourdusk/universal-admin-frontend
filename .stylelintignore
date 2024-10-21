@@ -12,7 +12,7 @@ dist
 dist-ssr
 styled
 swagger
-src/modules/common/types
+src/global/types
 *.local
 
 # Editor directories and files

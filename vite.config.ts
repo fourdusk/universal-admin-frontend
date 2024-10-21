@@ -38,12 +38,12 @@ const config = defineConfig({
       defaultClass: '',
       defaultStyle: '',
       customCollections: {
-        vi: iconLoader(pathResolve('src/modules/common/icons'))
+        vi: iconLoader(pathResolve('src/global/icons'))
       }
     }),
     autoImport({
-      dirs: ['src/modules/common/utils/expose'],
-      dts: 'src/modules/common/types/auto-import.d.ts',
+      dirs: ['src/global/utils/expose'],
+      dts: 'src/global/types/auto-import.d.ts',
       eslintrc: {
         enabled: true,
         filepath: './.eslintrc-auto-import.json',
@@ -51,8 +51,8 @@ const config = defineConfig({
       }
     }),
     vueComponents({
-      dirs: ['src/modules/common/components'],
-      dts: 'src/modules/common/types/components.d.ts',
+      dirs: ['src/global/components'],
+      dts: 'src/global/types/components.d.ts',
       resolvers: [
         iconsResolver({
           prefix: false,

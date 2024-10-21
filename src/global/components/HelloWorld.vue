@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { css } from 'styled/css'
 import { Auth } from 'swagger/api/Auth'
+import { Resource } from 'swagger/api/Resource'
+import { Role } from 'swagger/api/Role'
 import { User } from 'swagger/api/User'
 import { ref } from 'vue'
 
@@ -18,6 +20,8 @@ const username = ref('')
 const password = ref('')
 const signInResult = ref({})
 const userFindResult = ref({})
+const roleFindResult = ref({})
+const resourceFindResult = ref({})
 const buttonStyles = css({
   backgroundColor: 'pink.700',
   color: 'white',
@@ -43,6 +47,18 @@ const handleGetUserList = async () => {
   const result = await user.postUserFind({})
   userFindResult.value = result
 }
+
+const handleGetRoleList = async () => {
+  const role = new Role()
+  const result = await role.postRoleFind({})
+  roleFindResult.value = result
+}
+
+const handleGetResourceList = async () => {
+  const resource = new Resource()
+  const result = await resource.postResourceFind({})
+  resourceFindResult.value = result
+}
 </script>
 
 <template>
@@ -59,8 +75,14 @@ const handleGetUserList = async () => {
     <div :class="boxStyles">
       <button :class="buttonStyles" type="button" @click="handleSignIn">登录</button>
       <button :class="buttonStyles" type="button" @click="handleGetUserList">获取用户列表</button>
+      <button :class="buttonStyles" type="button" @click="handleGetRoleList">获取角色列表</button>
+      <button :class="buttonStyles" type="button" @click="handleGetResourceList">
+        获取资源列表
+      </button>
     </div>
     <div>登录结果：{{ signInResult }}</div>
     <div>获取用户列表结果：{{ userFindResult }}</div>
+    <div>获取角色列表结果：{{ roleFindResult }}</div>
+    <div>获取资源列表结果：{{ resourceFindResult }}</div>
   </form>
 </template>
