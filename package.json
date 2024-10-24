@@ -2,15 +2,21 @@
   "name": "universal-admin-frontend",
   "version": "0.0.1",
   "description": "Universal admin frontend",
-  "keywords": [
-    "universal",
-    "admin",
-    "frontend"
-  ],
   "author": "javionlog",
   "license": "MIT",
   "main": "src/main.ts",
   "type": "module",
+  "keywords": [
+    "universal",
+    "admin",
+    "frontend",
+    "typescript"
+  ],
+  "bugs": "https://github.com/javionlog/universal-admin-frontend/issues",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/javionlog/universal-admin-frontend.git"
+  },
   "scripts": {
     "prepare": "husky && panda codegen",
     "dev": "vite",
