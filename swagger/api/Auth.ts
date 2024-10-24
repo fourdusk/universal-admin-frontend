@@ -14,6 +14,79 @@ export class Auth<SecurityDataType = unknown> extends HttpClient<SecurityDataTyp
     username: string,
     accessToken: string,
     refreshToken: string,
+    resourceTree: ({
+    id: number,
+    remark: ((null | string) | null),
+  \**
+   * 排序
+   * @default 0
+   *\
+    sort: number,
+  \**
+   * 删除标记，已删除(Y)/未删除(N)
+   * @default "N"
+   *\
+    delFlag: ("Y" | "N"),
+  \**
+   * 创建时间
+   * @default 1729735172479
+   *\
+    createdAt: number,
+  \**
+   * 更新时间
+   * @default 1729735172479
+   *\
+    updatedAt: number,
+  \** 创建人 *\
+    createdBy: string,
+  \** 更新人 *\
+    updatedBy: string,
+  \**
+   * 状态，启用(Y)/禁用(N)
+   * @default "N"
+   *\
+    status: ("Y" | "N"),
+  \**
+   * 父 ID
+   * @default 0
+   *\
+    parentId: number,
+  \** 资源编码 *\
+    resourceCode: string,
+  \** 资源名称 *\
+    resourceName: string,
+  \**
+   * 资源类型，菜单(Menu)/页面(Page)/元素(Element)
+   * @default "Menu"
+   *\
+    resourceType: ("Menu" | "Pgae" | "Element"),
+    path: ((null | string) | null),
+    activePath: ((null | string) | null),
+    component: ((null | string) | null),
+    icon: ((null | string) | null),
+  \**
+   * 是否外链，是(Y)/否(N)
+   * @default "N"
+   *\
+    isLink: ("Y" | "N"),
+  \**
+   * 是否缓存，是(Y)/否(N)
+   * @default "N"
+   *\
+    isCache: ("Y" | "N"),
+  \**
+   * 是否固定，是(Y)/否(N)
+   * @default "N"
+   *\
+    isAffix: ("Y" | "N"),
+  \**
+   * 是否隐藏，是(Y)/否(N)
+   * @default "N"
+   *\
+    isHide: ("Y" | "N"),
+    children: (any)[],
+
+})[],
 
 }`
  */
@@ -24,6 +97,78 @@ export class Auth<SecurityDataType = unknown> extends HttpClient<SecurityDataTyp
         username: string
         accessToken: string
         refreshToken: string
+        resourceTree: {
+          id: number
+          remark: (null | string) | null
+          /**
+           * 排序
+           * @default 0
+           */
+          sort: number
+          /**
+           * 删除标记，已删除(Y)/未删除(N)
+           * @default "N"
+           */
+          delFlag: 'Y' | 'N'
+          /**
+           * 创建时间
+           * @default 1729735172479
+           */
+          createdAt: number
+          /**
+           * 更新时间
+           * @default 1729735172479
+           */
+          updatedAt: number
+          /** 创建人 */
+          createdBy: string
+          /** 更新人 */
+          updatedBy: string
+          /**
+           * 状态，启用(Y)/禁用(N)
+           * @default "N"
+           */
+          status: 'Y' | 'N'
+          /**
+           * 父 ID
+           * @default 0
+           */
+          parentId: number
+          /** 资源编码 */
+          resourceCode: string
+          /** 资源名称 */
+          resourceName: string
+          /**
+           * 资源类型，菜单(Menu)/页面(Page)/元素(Element)
+           * @default "Menu"
+           */
+          resourceType: 'Menu' | 'Pgae' | 'Element'
+          path: (null | string) | null
+          activePath: (null | string) | null
+          component: (null | string) | null
+          icon: (null | string) | null
+          /**
+           * 是否外链，是(Y)/否(N)
+           * @default "N"
+           */
+          isLink: 'Y' | 'N'
+          /**
+           * 是否缓存，是(Y)/否(N)
+           * @default "N"
+           */
+          isCache: 'Y' | 'N'
+          /**
+           * 是否固定，是(Y)/否(N)
+           * @default "N"
+           */
+          isAffix: 'Y' | 'N'
+          /**
+           * 是否隐藏，是(Y)/否(N)
+           * @default "N"
+           */
+          isHide: 'Y' | 'N'
+          children: any[]
+        }[]
       },
       any
     >({

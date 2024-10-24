@@ -15,13 +15,8 @@ export class RoleToResource<SecurityDataType = unknown> extends HttpClient<Secur
  * @summary 授权资源给角色
  * @request POST:/roleToResource/create
  * @response `200` `{
-  \**
-   * 状态，启用(Y)/禁用(N)
-   * @default "N"
-   *\
-    status: ("Y" | "N"),
-  \** 备注 *\
-    remark: (string | null),
+    id: number,
+    remark: ((null | string) | null),
   \**
    * 排序
    * @default 0
@@ -34,19 +29,18 @@ export class RoleToResource<SecurityDataType = unknown> extends HttpClient<Secur
     delFlag: ("Y" | "N"),
   \**
    * 创建时间
-   * @default 1729149009087
+   * @default 1729735172479
    *\
     createdAt: number,
   \**
    * 更新时间
-   * @default 1729149009087
+   * @default 1729735172479
    *\
     updatedAt: number,
   \** 创建人 *\
     createdBy: string,
   \** 更新人 *\
     updatedBy: string,
-    id: number,
   \** 角色编码 *\
     roleCode: string,
   \** 资源编码 *\
@@ -57,13 +51,8 @@ export class RoleToResource<SecurityDataType = unknown> extends HttpClient<Secur
   postRoleToResourceCreate = (data: PostRoleToResourceCreatePayload, params: RequestParams = {}) =>
     this.request<
       {
-        /**
-         * 状态，启用(Y)/禁用(N)
-         * @default "N"
-         */
-        status: 'Y' | 'N'
-        /** 备注 */
-        remark: string | null
+        id: number
+        remark: (null | string) | null
         /**
          * 排序
          * @default 0
@@ -76,19 +65,18 @@ export class RoleToResource<SecurityDataType = unknown> extends HttpClient<Secur
         delFlag: 'Y' | 'N'
         /**
          * 创建时间
-         * @default 1729149009087
+         * @default 1729735172479
          */
         createdAt: number
         /**
          * 更新时间
-         * @default 1729149009087
+         * @default 1729735172479
          */
         updatedAt: number
         /** 创建人 */
         createdBy: string
         /** 更新人 */
         updatedBy: string
-        id: number
         /** 角色编码 */
         roleCode: string
         /** 资源编码 */
@@ -111,13 +99,8 @@ export class RoleToResource<SecurityDataType = unknown> extends HttpClient<Secur
  * @summary 删除角色资源
  * @request POST:/roleToResource/remove
  * @response `200` `{
-  \**
-   * 状态，启用(Y)/禁用(N)
-   * @default "N"
-   *\
-    status: ("Y" | "N"),
-  \** 备注 *\
-    remark: (string | null),
+    id: number,
+    remark: ((null | string) | null),
   \**
    * 排序
    * @default 0
@@ -130,19 +113,18 @@ export class RoleToResource<SecurityDataType = unknown> extends HttpClient<Secur
     delFlag: ("Y" | "N"),
   \**
    * 创建时间
-   * @default 1729149009087
+   * @default 1729735172479
    *\
     createdAt: number,
   \**
    * 更新时间
-   * @default 1729149009087
+   * @default 1729735172479
    *\
     updatedAt: number,
   \** 创建人 *\
     createdBy: string,
   \** 更新人 *\
     updatedBy: string,
-    id: number,
   \** 角色编码 *\
     roleCode: string,
   \** 资源编码 *\
@@ -153,13 +135,8 @@ export class RoleToResource<SecurityDataType = unknown> extends HttpClient<Secur
   postRoleToResourceRemove = (data: PostRoleToResourceRemovePayload, params: RequestParams = {}) =>
     this.request<
       {
-        /**
-         * 状态，启用(Y)/禁用(N)
-         * @default "N"
-         */
-        status: 'Y' | 'N'
-        /** 备注 */
-        remark: string | null
+        id: number
+        remark: (null | string) | null
         /**
          * 排序
          * @default 0
@@ -172,19 +149,18 @@ export class RoleToResource<SecurityDataType = unknown> extends HttpClient<Secur
         delFlag: 'Y' | 'N'
         /**
          * 创建时间
-         * @default 1729149009087
+         * @default 1729735172479
          */
         createdAt: number
         /**
          * 更新时间
-         * @default 1729149009087
+         * @default 1729735172479
          */
         updatedAt: number
         /** 创建人 */
         createdBy: string
         /** 更新人 */
         updatedBy: string
-        id: number
         /** 角色编码 */
         roleCode: string
         /** 资源编码 */
@@ -208,13 +184,8 @@ export class RoleToResource<SecurityDataType = unknown> extends HttpClient<Secur
  * @request POST:/roleToResource/find
  * @response `200` `{
     records: ({
-  \**
-   * 状态，启用(Y)/禁用(N)
-   * @default "N"
-   *\
-    status: ("Y" | "N"),
-  \** 备注 *\
-    remark: (string | null),
+    id: number,
+    remark: ((null | string) | null),
   \**
    * 排序
    * @default 0
@@ -227,19 +198,18 @@ export class RoleToResource<SecurityDataType = unknown> extends HttpClient<Secur
     delFlag: ("Y" | "N"),
   \**
    * 创建时间
-   * @default 1729149009087
+   * @default 1729735172479
    *\
     createdAt: number,
   \**
    * 更新时间
-   * @default 1729149009087
+   * @default 1729735172479
    *\
     updatedAt: number,
   \** 创建人 *\
     createdBy: string,
   \** 更新人 *\
     updatedBy: string,
-    id: number,
   \** 角色编码 *\
     roleCode: string,
   \** 资源编码 *\
@@ -254,13 +224,8 @@ export class RoleToResource<SecurityDataType = unknown> extends HttpClient<Secur
     this.request<
       {
         records: {
-          /**
-           * 状态，启用(Y)/禁用(N)
-           * @default "N"
-           */
-          status: 'Y' | 'N'
-          /** 备注 */
-          remark: string | null
+          id: number
+          remark: (null | string) | null
           /**
            * 排序
            * @default 0
@@ -273,19 +238,18 @@ export class RoleToResource<SecurityDataType = unknown> extends HttpClient<Secur
           delFlag: 'Y' | 'N'
           /**
            * 创建时间
-           * @default 1729149009087
+           * @default 1729735172479
            */
           createdAt: number
           /**
            * 更新时间
-           * @default 1729149009087
+           * @default 1729735172479
            */
           updatedAt: number
           /** 创建人 */
           createdBy: string
           /** 更新人 */
           updatedBy: string
-          id: number
           /** 角色编码 */
           roleCode: string
           /** 资源编码 */
@@ -311,13 +275,8 @@ export class RoleToResource<SecurityDataType = unknown> extends HttpClient<Secur
  * @request POST:/roleToResource/findAll
  * @response `200` `{
     records: ({
-  \**
-   * 状态，启用(Y)/禁用(N)
-   * @default "N"
-   *\
-    status: ("Y" | "N"),
-  \** 备注 *\
-    remark: (string | null),
+    id: number,
+    remark: ((null | string) | null),
   \**
    * 排序
    * @default 0
@@ -330,19 +289,18 @@ export class RoleToResource<SecurityDataType = unknown> extends HttpClient<Secur
     delFlag: ("Y" | "N"),
   \**
    * 创建时间
-   * @default 1729149009087
+   * @default 1729735172479
    *\
     createdAt: number,
   \**
    * 更新时间
-   * @default 1729149009087
+   * @default 1729735172479
    *\
     updatedAt: number,
   \** 创建人 *\
     createdBy: string,
   \** 更新人 *\
     updatedBy: string,
-    id: number,
   \** 角色编码 *\
     roleCode: string,
   \** 资源编码 *\
@@ -360,13 +318,8 @@ export class RoleToResource<SecurityDataType = unknown> extends HttpClient<Secur
     this.request<
       {
         records: {
-          /**
-           * 状态，启用(Y)/禁用(N)
-           * @default "N"
-           */
-          status: 'Y' | 'N'
-          /** 备注 */
-          remark: string | null
+          id: number
+          remark: (null | string) | null
           /**
            * 排序
            * @default 0
@@ -379,19 +332,18 @@ export class RoleToResource<SecurityDataType = unknown> extends HttpClient<Secur
           delFlag: 'Y' | 'N'
           /**
            * 创建时间
-           * @default 1729149009087
+           * @default 1729735172479
            */
           createdAt: number
           /**
            * 更新时间
-           * @default 1729149009087
+           * @default 1729735172479
            */
           updatedAt: number
           /** 创建人 */
           createdBy: string
           /** 更新人 */
           updatedBy: string
-          id: number
           /** 角色编码 */
           roleCode: string
           /** 资源编码 */

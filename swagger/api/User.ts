@@ -1,6 +1,12 @@
 import {
   PostUserCreatePayload,
+  PostUserFindAllPayload,
+  PostUserFindAllResourcesPayload,
+  PostUserFindAllRolesPayload,
   PostUserFindPayload,
+  PostUserFindResourcesPayload,
+  PostUserFindResourceTreePayload,
+  PostUserFindRolesPayload,
   PostUserGetPayload,
   PostUserRemovePayload,
   PostUserUpdatePayload
@@ -16,94 +22,92 @@ export class User<SecurityDataType = unknown> extends HttpClient<SecurityDataTyp
  * @summary 用户创建
  * @request POST:/user/create
  * @response `200` `{
-  \**
-   * 状态，启用(Y)/禁用(N)
-   * @default "N"
-   *\
-    status?: ("Y" | "N"),
-  \** 备注 *\
-    remark?: (string | null),
+    id: number,
+    remark: ((null | string) | null),
   \**
    * 排序
    * @default 0
    *\
-    sort?: number,
+    sort: number,
   \**
    * 删除标记，已删除(Y)/未删除(N)
    * @default "N"
    *\
-    delFlag?: ("Y" | "N"),
+    delFlag: ("Y" | "N"),
   \**
    * 创建时间
-   * @default 1729149009087
+   * @default 1729735172479
    *\
-    createdAt?: number,
+    createdAt: number,
   \**
    * 更新时间
-   * @default 1729149009087
+   * @default 1729735172479
    *\
-    updatedAt?: number,
+    updatedAt: number,
   \** 创建人 *\
     createdBy: string,
   \** 更新人 *\
     updatedBy: string,
-    id?: number,
+  \**
+   * 状态，启用(Y)/禁用(N)
+   * @default "N"
+   *\
+    status: ("Y" | "N"),
   \** 用户名 *\
     username: string,
   \**
    * 是否管理员，是(Y)/否(N)
    * @default "N"
    *\
-    isAdmin?: ("Y" | "N"),
+    isAdmin: ("Y" | "N"),
   \** 最后登录时间 *\
-    lastSignInAt?: (number | null),
+    lastSignInAt: (number | null),
 
 }`
  */
   postUserCreate = (data: PostUserCreatePayload, params: RequestParams = {}) =>
     this.request<
       {
-        /**
-         * 状态，启用(Y)/禁用(N)
-         * @default "N"
-         */
-        status?: 'Y' | 'N'
-        /** 备注 */
-        remark?: string | null
+        id: number
+        remark: (null | string) | null
         /**
          * 排序
          * @default 0
          */
-        sort?: number
+        sort: number
         /**
          * 删除标记，已删除(Y)/未删除(N)
          * @default "N"
          */
-        delFlag?: 'Y' | 'N'
+        delFlag: 'Y' | 'N'
         /**
          * 创建时间
-         * @default 1729149009087
+         * @default 1729735172479
          */
-        createdAt?: number
+        createdAt: number
         /**
          * 更新时间
-         * @default 1729149009087
+         * @default 1729735172479
          */
-        updatedAt?: number
+        updatedAt: number
         /** 创建人 */
         createdBy: string
         /** 更新人 */
         updatedBy: string
-        id?: number
+        /**
+         * 状态，启用(Y)/禁用(N)
+         * @default "N"
+         */
+        status: 'Y' | 'N'
         /** 用户名 */
         username: string
         /**
          * 是否管理员，是(Y)/否(N)
          * @default "N"
          */
-        isAdmin?: 'Y' | 'N'
+        isAdmin: 'Y' | 'N'
         /** 最后登录时间 */
-        lastSignInAt?: number | null
+        lastSignInAt: number | null
       },
       any
     >({
@@ -122,13 +126,8 @@ export class User<SecurityDataType = unknown> extends HttpClient<SecurityDataTyp
  * @summary 用户更新
  * @request POST:/user/update
  * @response `200` `{
-  \**
-   * 状态，启用(Y)/禁用(N)
-   * @default "N"
-   *\
-    status: ("Y" | "N"),
-  \** 备注 *\
-    remark: (string | null),
+    id: number,
+    remark: ((null | string) | null),
   \**
    * 排序
    * @default 0
@@ -141,19 +140,23 @@ export class User<SecurityDataType = unknown> extends HttpClient<SecurityDataTyp
     delFlag: ("Y" | "N"),
   \**
    * 创建时间
-   * @default 1729149009087
+   * @default 1729735172479
    *\
     createdAt: number,
   \**
    * 更新时间
-   * @default 1729149009087
+   * @default 1729735172479
    *\
     updatedAt: number,
   \** 创建人 *\
     createdBy: string,
   \** 更新人 *\
     updatedBy: string,
-    id: number,
+  \**
+   * 状态，启用(Y)/禁用(N)
+   * @default "N"
+   *\
+    status: ("Y" | "N"),
   \** 用户名 *\
     username: string,
   \**
@@ -169,13 +172,8 @@ export class User<SecurityDataType = unknown> extends HttpClient<SecurityDataTyp
   postUserUpdate = (data: PostUserUpdatePayload, params: RequestParams = {}) =>
     this.request<
       {
-        /**
-         * 状态，启用(Y)/禁用(N)
-         * @default "N"
-         */
-        status: 'Y' | 'N'
-        /** 备注 */
-        remark: string | null
+        id: number
+        remark: (null | string) | null
         /**
          * 排序
          * @default 0
@@ -188,19 +186,23 @@ export class User<SecurityDataType = unknown> extends HttpClient<SecurityDataTyp
         delFlag: 'Y' | 'N'
         /**
          * 创建时间
-         * @default 1729149009087
+         * @default 1729735172479
          */
         createdAt: number
         /**
          * 更新时间
-         * @default 1729149009087
+         * @default 1729735172479
          */
         updatedAt: number
         /** 创建人 */
         createdBy: string
         /** 更新人 */
         updatedBy: string
-        id: number
+        /**
+         * 状态，启用(Y)/禁用(N)
+         * @default "N"
+         */
+        status: 'Y' | 'N'
         /** 用户名 */
         username: string
         /**
@@ -228,13 +230,8 @@ export class User<SecurityDataType = unknown> extends HttpClient<SecurityDataTyp
  * @summary 用户删除
  * @request POST:/user/remove
  * @response `200` `{
-  \**
-   * 状态，启用(Y)/禁用(N)
-   * @default "N"
-   *\
-    status: ("Y" | "N"),
-  \** 备注 *\
-    remark: (string | null),
+    id: number,
+    remark: ((null | string) | null),
   \**
    * 排序
    * @default 0
@@ -247,19 +244,23 @@ export class User<SecurityDataType = unknown> extends HttpClient<SecurityDataTyp
     delFlag: ("Y" | "N"),
   \**
    * 创建时间
-   * @default 1729149009087
+   * @default 1729735172479
    *\
     createdAt: number,
   \**
    * 更新时间
-   * @default 1729149009087
+   * @default 1729735172479
    *\
     updatedAt: number,
   \** 创建人 *\
     createdBy: string,
   \** 更新人 *\
     updatedBy: string,
-    id: number,
+  \**
+   * 状态，启用(Y)/禁用(N)
+   * @default "N"
+   *\
+    status: ("Y" | "N"),
   \** 用户名 *\
     username: string,
   \**
@@ -275,13 +276,8 @@ export class User<SecurityDataType = unknown> extends HttpClient<SecurityDataTyp
   postUserRemove = (data: PostUserRemovePayload, params: RequestParams = {}) =>
     this.request<
       {
-        /**
-         * 状态，启用(Y)/禁用(N)
-         * @default "N"
-         */
-        status: 'Y' | 'N'
-        /** 备注 */
-        remark: string | null
+        id: number
+        remark: (null | string) | null
         /**
          * 排序
          * @default 0
@@ -294,19 +290,23 @@ export class User<SecurityDataType = unknown> extends HttpClient<SecurityDataTyp
         delFlag: 'Y' | 'N'
         /**
          * 创建时间
-         * @default 1729149009087
+         * @default 1729735172479
          */
         createdAt: number
         /**
          * 更新时间
-         * @default 1729149009087
+         * @default 1729735172479
          */
         updatedAt: number
         /** 创建人 */
         createdBy: string
         /** 更新人 */
         updatedBy: string
-        id: number
+        /**
+         * 状态，启用(Y)/禁用(N)
+         * @default "N"
+         */
+        status: 'Y' | 'N'
         /** 用户名 */
         username: string
         /**
@@ -334,13 +334,8 @@ export class User<SecurityDataType = unknown> extends HttpClient<SecurityDataTyp
  * @summary 用户信息
  * @request POST:/user/get
  * @response `200` `{
-  \**
-   * 状态，启用(Y)/禁用(N)
-   * @default "N"
-   *\
-    status: ("Y" | "N"),
-  \** 备注 *\
-    remark: (string | null),
+    id: number,
+    remark: ((null | string) | null),
   \**
    * 排序
    * @default 0
@@ -353,19 +348,23 @@ export class User<SecurityDataType = unknown> extends HttpClient<SecurityDataTyp
     delFlag: ("Y" | "N"),
   \**
    * 创建时间
-   * @default 1729149009087
+   * @default 1729735172479
    *\
     createdAt: number,
   \**
    * 更新时间
-   * @default 1729149009087
+   * @default 1729735172479
    *\
     updatedAt: number,
   \** 创建人 *\
     createdBy: string,
   \** 更新人 *\
     updatedBy: string,
-    id: number,
+  \**
+   * 状态，启用(Y)/禁用(N)
+   * @default "N"
+   *\
+    status: ("Y" | "N"),
   \** 用户名 *\
     username: string,
   \**
@@ -381,13 +380,8 @@ export class User<SecurityDataType = unknown> extends HttpClient<SecurityDataTyp
   postUserGet = (data: PostUserGetPayload, params: RequestParams = {}) =>
     this.request<
       {
-        /**
-         * 状态，启用(Y)/禁用(N)
-         * @default "N"
-         */
-        status: 'Y' | 'N'
-        /** 备注 */
-        remark: string | null
+        id: number
+        remark: (null | string) | null
         /**
          * 排序
          * @default 0
@@ -400,19 +394,23 @@ export class User<SecurityDataType = unknown> extends HttpClient<SecurityDataTyp
         delFlag: 'Y' | 'N'
         /**
          * 创建时间
-         * @default 1729149009087
+         * @default 1729735172479
          */
         createdAt: number
         /**
          * 更新时间
-         * @default 1729149009087
+         * @default 1729735172479
          */
         updatedAt: number
         /** 创建人 */
         createdBy: string
         /** 更新人 */
         updatedBy: string
-        id: number
+        /**
+         * 状态，启用(Y)/禁用(N)
+         * @default "N"
+         */
+        status: 'Y' | 'N'
         /** 用户名 */
         username: string
         /**
@@ -441,13 +439,8 @@ export class User<SecurityDataType = unknown> extends HttpClient<SecurityDataTyp
  * @request POST:/user/find
  * @response `200` `{
     records: ({
-  \**
-   * 状态，启用(Y)/禁用(N)
-   * @default "N"
-   *\
-    status: ("Y" | "N"),
-  \** 备注 *\
-    remark: (string | null),
+    id: number,
+    remark: ((null | string) | null),
   \**
    * 排序
    * @default 0
@@ -460,19 +453,23 @@ export class User<SecurityDataType = unknown> extends HttpClient<SecurityDataTyp
     delFlag: ("Y" | "N"),
   \**
    * 创建时间
-   * @default 1729149009087
+   * @default 1729735172479
    *\
     createdAt: number,
   \**
    * 更新时间
-   * @default 1729149009087
+   * @default 1729735172479
    *\
     updatedAt: number,
   \** 创建人 *\
     createdBy: string,
   \** 更新人 *\
     updatedBy: string,
-    id: number,
+  \**
+   * 状态，启用(Y)/禁用(N)
+   * @default "N"
+   *\
+    status: ("Y" | "N"),
   \** 用户名 *\
     username: string,
   \**
@@ -492,13 +489,8 @@ export class User<SecurityDataType = unknown> extends HttpClient<SecurityDataTyp
     this.request<
       {
         records: {
-          /**
-           * 状态，启用(Y)/禁用(N)
-           * @default "N"
-           */
-          status: 'Y' | 'N'
-          /** 备注 */
-          remark: string | null
+          id: number
+          remark: (null | string) | null
           /**
            * 排序
            * @default 0
@@ -511,19 +503,23 @@ export class User<SecurityDataType = unknown> extends HttpClient<SecurityDataTyp
           delFlag: 'Y' | 'N'
           /**
            * 创建时间
-           * @default 1729149009087
+           * @default 1729735172479
            */
           createdAt: number
           /**
            * 更新时间
-           * @default 1729149009087
+           * @default 1729735172479
            */
           updatedAt: number
           /** 创建人 */
           createdBy: string
           /** 更新人 */
           updatedBy: string
-          id: number
+          /**
+           * 状态，启用(Y)/禁用(N)
+           * @default "N"
+           */
+          status: 'Y' | 'N'
           /** 用户名 */
           username: string
           /**
@@ -539,6 +535,821 @@ export class User<SecurityDataType = unknown> extends HttpClient<SecurityDataTyp
       any
     >({
       path: `/user/find`,
+      method: 'POST',
+      body: data,
+      type: ContentType.Json,
+      format: 'json',
+      ...params
+    })
+  /**
+ * No description
+ *
+ * @tags User
+ * @name PostUserFindAll
+ * @summary 用户全部
+ * @request POST:/user/findAll
+ * @response `200` `{
+    records: ({
+    id: number,
+    remark: ((null | string) | null),
+  \**
+   * 排序
+   * @default 0
+   *\
+    sort: number,
+  \**
+   * 删除标记，已删除(Y)/未删除(N)
+   * @default "N"
+   *\
+    delFlag: ("Y" | "N"),
+  \**
+   * 创建时间
+   * @default 1729735172479
+   *\
+    createdAt: number,
+  \**
+   * 更新时间
+   * @default 1729735172479
+   *\
+    updatedAt: number,
+  \** 创建人 *\
+    createdBy: string,
+  \** 更新人 *\
+    updatedBy: string,
+  \**
+   * 状态，启用(Y)/禁用(N)
+   * @default "N"
+   *\
+    status: ("Y" | "N"),
+  \** 用户名 *\
+    username: string,
+  \**
+   * 是否管理员，是(Y)/否(N)
+   * @default "N"
+   *\
+    isAdmin: ("Y" | "N"),
+  \** 最后登录时间 *\
+    lastSignInAt: (number | null),
+
+})[],
+    total: number,
+
+}`
+ */
+  postUserFindAll = (data: PostUserFindAllPayload, params: RequestParams = {}) =>
+    this.request<
+      {
+        records: {
+          id: number
+          remark: (null | string) | null
+          /**
+           * 排序
+           * @default 0
+           */
+          sort: number
+          /**
+           * 删除标记，已删除(Y)/未删除(N)
+           * @default "N"
+           */
+          delFlag: 'Y' | 'N'
+          /**
+           * 创建时间
+           * @default 1729735172479
+           */
+          createdAt: number
+          /**
+           * 更新时间
+           * @default 1729735172479
+           */
+          updatedAt: number
+          /** 创建人 */
+          createdBy: string
+          /** 更新人 */
+          updatedBy: string
+          /**
+           * 状态，启用(Y)/禁用(N)
+           * @default "N"
+           */
+          status: 'Y' | 'N'
+          /** 用户名 */
+          username: string
+          /**
+           * 是否管理员，是(Y)/否(N)
+           * @default "N"
+           */
+          isAdmin: 'Y' | 'N'
+          /** 最后登录时间 */
+          lastSignInAt: number | null
+        }[]
+        total: number
+      },
+      any
+    >({
+      path: `/user/findAll`,
+      method: 'POST',
+      body: data,
+      type: ContentType.Json,
+      format: 'json',
+      ...params
+    })
+  /**
+ * No description
+ *
+ * @tags User
+ * @name PostUserFindRoles
+ * @summary 用户拥有的角色列表
+ * @request POST:/user/findRoles
+ * @response `200` `{
+    records: ({
+    id: number,
+    remark: ((null | string) | null),
+  \**
+   * 排序
+   * @default 0
+   *\
+    sort: number,
+  \**
+   * 删除标记，已删除(Y)/未删除(N)
+   * @default "N"
+   *\
+    delFlag: ("Y" | "N"),
+  \**
+   * 创建时间
+   * @default 1729735172479
+   *\
+    createdAt: number,
+  \**
+   * 更新时间
+   * @default 1729735172479
+   *\
+    updatedAt: number,
+  \** 创建人 *\
+    createdBy: string,
+  \** 更新人 *\
+    updatedBy: string,
+  \**
+   * 状态，启用(Y)/禁用(N)
+   * @default "N"
+   *\
+    status: ("Y" | "N"),
+  \** 角色编码 *\
+    roleCode: string,
+  \** 角色名称 *\
+    roleName: string,
+
+})[],
+    total: number,
+
+}`
+ */
+  postUserFindRoles = (data: PostUserFindRolesPayload, params: RequestParams = {}) =>
+    this.request<
+      {
+        records: {
+          id: number
+          remark: (null | string) | null
+          /**
+           * 排序
+           * @default 0
+           */
+          sort: number
+          /**
+           * 删除标记，已删除(Y)/未删除(N)
+           * @default "N"
+           */
+          delFlag: 'Y' | 'N'
+          /**
+           * 创建时间
+           * @default 1729735172479
+           */
+          createdAt: number
+          /**
+           * 更新时间
+           * @default 1729735172479
+           */
+          updatedAt: number
+          /** 创建人 */
+          createdBy: string
+          /** 更新人 */
+          updatedBy: string
+          /**
+           * 状态，启用(Y)/禁用(N)
+           * @default "N"
+           */
+          status: 'Y' | 'N'
+          /** 角色编码 */
+          roleCode: string
+          /** 角色名称 */
+          roleName: string
+        }[]
+        total: number
+      },
+      any
+    >({
+      path: `/user/findRoles`,
+      method: 'POST',
+      body: data,
+      type: ContentType.Json,
+      format: 'json',
+      ...params
+    })
+  /**
+ * No description
+ *
+ * @tags User
+ * @name PostUserFindAllRoles
+ * @summary 用户拥有的角色全部
+ * @request POST:/user/findAllRoles
+ * @response `200` `{
+    records: ({
+    id: number,
+    remark: ((null | string) | null),
+  \**
+   * 排序
+   * @default 0
+   *\
+    sort: number,
+  \**
+   * 删除标记，已删除(Y)/未删除(N)
+   * @default "N"
+   *\
+    delFlag: ("Y" | "N"),
+  \**
+   * 创建时间
+   * @default 1729735172479
+   *\
+    createdAt: number,
+  \**
+   * 更新时间
+   * @default 1729735172479
+   *\
+    updatedAt: number,
+  \** 创建人 *\
+    createdBy: string,
+  \** 更新人 *\
+    updatedBy: string,
+  \**
+   * 状态，启用(Y)/禁用(N)
+   * @default "N"
+   *\
+    status: ("Y" | "N"),
+  \** 角色编码 *\
+    roleCode: string,
+  \** 角色名称 *\
+    roleName: string,
+
+})[],
+    total: number,
+
+}`
+ */
+  postUserFindAllRoles = (data: PostUserFindAllRolesPayload, params: RequestParams = {}) =>
+    this.request<
+      {
+        records: {
+          id: number
+          remark: (null | string) | null
+          /**
+           * 排序
+           * @default 0
+           */
+          sort: number
+          /**
+           * 删除标记，已删除(Y)/未删除(N)
+           * @default "N"
+           */
+          delFlag: 'Y' | 'N'
+          /**
+           * 创建时间
+           * @default 1729735172479
+           */
+          createdAt: number
+          /**
+           * 更新时间
+           * @default 1729735172479
+           */
+          updatedAt: number
+          /** 创建人 */
+          createdBy: string
+          /** 更新人 */
+          updatedBy: string
+          /**
+           * 状态，启用(Y)/禁用(N)
+           * @default "N"
+           */
+          status: 'Y' | 'N'
+          /** 角色编码 */
+          roleCode: string
+          /** 角色名称 */
+          roleName: string
+        }[]
+        total: number
+      },
+      any
+    >({
+      path: `/user/findAllRoles`,
+      method: 'POST',
+      body: data,
+      type: ContentType.Json,
+      format: 'json',
+      ...params
+    })
+  /**
+ * No description
+ *
+ * @tags User
+ * @name PostUserFindResources
+ * @summary 用户拥有的资源列表
+ * @request POST:/user/findResources
+ * @response `200` `{
+    records: ({
+    id: number,
+    remark: ((null | string) | null),
+  \**
+   * 排序
+   * @default 0
+   *\
+    sort: number,
+  \**
+   * 删除标记，已删除(Y)/未删除(N)
+   * @default "N"
+   *\
+    delFlag: ("Y" | "N"),
+  \**
+   * 创建时间
+   * @default 1729735172479
+   *\
+    createdAt: number,
+  \**
+   * 更新时间
+   * @default 1729735172479
+   *\
+    updatedAt: number,
+  \** 创建人 *\
+    createdBy: string,
+  \** 更新人 *\
+    updatedBy: string,
+  \**
+   * 状态，启用(Y)/禁用(N)
+   * @default "N"
+   *\
+    status: ("Y" | "N"),
+  \**
+   * 父 ID
+   * @default 0
+   *\
+    parentId: number,
+  \** 资源编码 *\
+    resourceCode: string,
+  \** 资源名称 *\
+    resourceName: string,
+  \**
+   * 资源类型，菜单(Menu)/页面(Page)/元素(Element)
+   * @default "Menu"
+   *\
+    resourceType: ("Menu" | "Pgae" | "Element"),
+    path: ((null | string) | null),
+    activePath: ((null | string) | null),
+    component: ((null | string) | null),
+    icon: ((null | string) | null),
+  \**
+   * 是否外链，是(Y)/否(N)
+   * @default "N"
+   *\
+    isLink: ("Y" | "N"),
+  \**
+   * 是否缓存，是(Y)/否(N)
+   * @default "N"
+   *\
+    isCache: ("Y" | "N"),
+  \**
+   * 是否固定，是(Y)/否(N)
+   * @default "N"
+   *\
+    isAffix: ("Y" | "N"),
+  \**
+   * 是否隐藏，是(Y)/否(N)
+   * @default "N"
+   *\
+    isHide: ("Y" | "N"),
+
+})[],
+    total: number,
+
+}`
+ */
+  postUserFindResources = (data: PostUserFindResourcesPayload, params: RequestParams = {}) =>
+    this.request<
+      {
+        records: {
+          id: number
+          remark: (null | string) | null
+          /**
+           * 排序
+           * @default 0
+           */
+          sort: number
+          /**
+           * 删除标记，已删除(Y)/未删除(N)
+           * @default "N"
+           */
+          delFlag: 'Y' | 'N'
+          /**
+           * 创建时间
+           * @default 1729735172479
+           */
+          createdAt: number
+          /**
+           * 更新时间
+           * @default 1729735172479
+           */
+          updatedAt: number
+          /** 创建人 */
+          createdBy: string
+          /** 更新人 */
+          updatedBy: string
+          /**
+           * 状态，启用(Y)/禁用(N)
+           * @default "N"
+           */
+          status: 'Y' | 'N'
+          /**
+           * 父 ID
+           * @default 0
+           */
+          parentId: number
+          /** 资源编码 */
+          resourceCode: string
+          /** 资源名称 */
+          resourceName: string
+          /**
+           * 资源类型，菜单(Menu)/页面(Page)/元素(Element)
+           * @default "Menu"
+           */
+          resourceType: 'Menu' | 'Pgae' | 'Element'
+          path: (null | string) | null
+          activePath: (null | string) | null
+          component: (null | string) | null
+          icon: (null | string) | null
+          /**
+           * 是否外链，是(Y)/否(N)
+           * @default "N"
+           */
+          isLink: 'Y' | 'N'
+          /**
+           * 是否缓存，是(Y)/否(N)
+           * @default "N"
+           */
+          isCache: 'Y' | 'N'
+          /**
+           * 是否固定，是(Y)/否(N)
+           * @default "N"
+           */
+          isAffix: 'Y' | 'N'
+          /**
+           * 是否隐藏，是(Y)/否(N)
+           * @default "N"
+           */
+          isHide: 'Y' | 'N'
+        }[]
+        total: number
+      },
+      any
+    >({
+      path: `/user/findResources`,
+      method: 'POST',
+      body: data,
+      type: ContentType.Json,
+      format: 'json',
+      ...params
+    })
+  /**
+ * No description
+ *
+ * @tags User
+ * @name PostUserFindAllResources
+ * @summary 用户拥有的资源全部
+ * @request POST:/user/findAllResources
+ * @response `200` `{
+    records: ({
+    id: number,
+    remark: ((null | string) | null),
+  \**
+   * 排序
+   * @default 0
+   *\
+    sort: number,
+  \**
+   * 删除标记，已删除(Y)/未删除(N)
+   * @default "N"
+   *\
+    delFlag: ("Y" | "N"),
+  \**
+   * 创建时间
+   * @default 1729735172479
+   *\
+    createdAt: number,
+  \**
+   * 更新时间
+   * @default 1729735172479
+   *\
+    updatedAt: number,
+  \** 创建人 *\
+    createdBy: string,
+  \** 更新人 *\
+    updatedBy: string,
+  \**
+   * 状态，启用(Y)/禁用(N)
+   * @default "N"
+   *\
+    status: ("Y" | "N"),
+  \**
+   * 父 ID
+   * @default 0
+   *\
+    parentId: number,
+  \** 资源编码 *\
+    resourceCode: string,
+  \** 资源名称 *\
+    resourceName: string,
+  \**
+   * 资源类型，菜单(Menu)/页面(Page)/元素(Element)
+   * @default "Menu"
+   *\
+    resourceType: ("Menu" | "Pgae" | "Element"),
+    path: ((null | string) | null),
+    activePath: ((null | string) | null),
+    component: ((null | string) | null),
+    icon: ((null | string) | null),
+  \**
+   * 是否外链，是(Y)/否(N)
+   * @default "N"
+   *\
+    isLink: ("Y" | "N"),
+  \**
+   * 是否缓存，是(Y)/否(N)
+   * @default "N"
+   *\
+    isCache: ("Y" | "N"),
+  \**
+   * 是否固定，是(Y)/否(N)
+   * @default "N"
+   *\
+    isAffix: ("Y" | "N"),
+  \**
+   * 是否隐藏，是(Y)/否(N)
+   * @default "N"
+   *\
+    isHide: ("Y" | "N"),
+
+})[],
+    total: number,
+
+}`
+ */
+  postUserFindAllResources = (data: PostUserFindAllResourcesPayload, params: RequestParams = {}) =>
+    this.request<
+      {
+        records: {
+          id: number
+          remark: (null | string) | null
+          /**
+           * 排序
+           * @default 0
+           */
+          sort: number
+          /**
+           * 删除标记，已删除(Y)/未删除(N)
+           * @default "N"
+           */
+          delFlag: 'Y' | 'N'
+          /**
+           * 创建时间
+           * @default 1729735172479
+           */
+          createdAt: number
+          /**
+           * 更新时间
+           * @default 1729735172479
+           */
+          updatedAt: number
+          /** 创建人 */
+          createdBy: string
+          /** 更新人 */
+          updatedBy: string
+          /**
+           * 状态，启用(Y)/禁用(N)
+           * @default "N"
+           */
+          status: 'Y' | 'N'
+          /**
+           * 父 ID
+           * @default 0
+           */
+          parentId: number
+          /** 资源编码 */
+          resourceCode: string
+          /** 资源名称 */
+          resourceName: string
+          /**
+           * 资源类型，菜单(Menu)/页面(Page)/元素(Element)
+           * @default "Menu"
+           */
+          resourceType: 'Menu' | 'Pgae' | 'Element'
+          path: (null | string) | null
+          activePath: (null | string) | null
+          component: (null | string) | null
+          icon: (null | string) | null
+          /**
+           * 是否外链，是(Y)/否(N)
+           * @default "N"
+           */
+          isLink: 'Y' | 'N'
+          /**
+           * 是否缓存，是(Y)/否(N)
+           * @default "N"
+           */
+          isCache: 'Y' | 'N'
+          /**
+           * 是否固定，是(Y)/否(N)
+           * @default "N"
+           */
+          isAffix: 'Y' | 'N'
+          /**
+           * 是否隐藏，是(Y)/否(N)
+           * @default "N"
+           */
+          isHide: 'Y' | 'N'
+        }[]
+        total: number
+      },
+      any
+    >({
+      path: `/user/findAllResources`,
+      method: 'POST',
+      body: data,
+      type: ContentType.Json,
+      format: 'json',
+      ...params
+    })
+  /**
+ * No description
+ *
+ * @tags User
+ * @name PostUserFindResourceTree
+ * @summary 用户资源树
+ * @request POST:/user/findResourceTree
+ * @response `200` `({
+    id: number,
+    remark: ((null | string) | null),
+  \**
+   * 排序
+   * @default 0
+   *\
+    sort: number,
+  \**
+   * 删除标记，已删除(Y)/未删除(N)
+   * @default "N"
+   *\
+    delFlag: ("Y" | "N"),
+  \**
+   * 创建时间
+   * @default 1729735172479
+   *\
+    createdAt: number,
+  \**
+   * 更新时间
+   * @default 1729735172479
+   *\
+    updatedAt: number,
+  \** 创建人 *\
+    createdBy: string,
+  \** 更新人 *\
+    updatedBy: string,
+  \**
+   * 状态，启用(Y)/禁用(N)
+   * @default "N"
+   *\
+    status: ("Y" | "N"),
+  \**
+   * 父 ID
+   * @default 0
+   *\
+    parentId: number,
+  \** 资源编码 *\
+    resourceCode: string,
+  \** 资源名称 *\
+    resourceName: string,
+  \**
+   * 资源类型，菜单(Menu)/页面(Page)/元素(Element)
+   * @default "Menu"
+   *\
+    resourceType: ("Menu" | "Pgae" | "Element"),
+    path: ((null | string) | null),
+    activePath: ((null | string) | null),
+    component: ((null | string) | null),
+    icon: ((null | string) | null),
+  \**
+   * 是否外链，是(Y)/否(N)
+   * @default "N"
+   *\
+    isLink: ("Y" | "N"),
+  \**
+   * 是否缓存，是(Y)/否(N)
+   * @default "N"
+   *\
+    isCache: ("Y" | "N"),
+  \**
+   * 是否固定，是(Y)/否(N)
+   * @default "N"
+   *\
+    isAffix: ("Y" | "N"),
+  \**
+   * 是否隐藏，是(Y)/否(N)
+   * @default "N"
+   *\
+    isHide: ("Y" | "N"),
+    children: (any)[],
+
+})[]`
+ */
+  postUserFindResourceTree = (data: PostUserFindResourceTreePayload, params: RequestParams = {}) =>
+    this.request<
+      {
+        id: number
+        remark: (null | string) | null
+        /**
+         * 排序
+         * @default 0
+         */
+        sort: number
+        /**
+         * 删除标记，已删除(Y)/未删除(N)
+         * @default "N"
+         */
+        delFlag: 'Y' | 'N'
+        /**
+         * 创建时间
+         * @default 1729735172479
+         */
+        createdAt: number
+        /**
+         * 更新时间
+         * @default 1729735172479
+         */
+        updatedAt: number
+        /** 创建人 */
+        createdBy: string
+        /** 更新人 */
+        updatedBy: string
+        /**
+         * 状态，启用(Y)/禁用(N)
+         * @default "N"
+         */
+        status: 'Y' | 'N'
+        /**
+         * 父 ID
+         * @default 0
+         */
+        parentId: number
+        /** 资源编码 */
+        resourceCode: string
+        /** 资源名称 */
+        resourceName: string
+        /**
+         * 资源类型，菜单(Menu)/页面(Page)/元素(Element)
+         * @default "Menu"
+         */
+        resourceType: 'Menu' | 'Pgae' | 'Element'
+        path: (null | string) | null
+        activePath: (null | string) | null
+        component: (null | string) | null
+        icon: (null | string) | null
+        /**
+         * 是否外链，是(Y)/否(N)
+         * @default "N"
+         */
+        isLink: 'Y' | 'N'
+        /**
+         * 是否缓存，是(Y)/否(N)
+         * @default "N"
+         */
+        isCache: 'Y' | 'N'
+        /**
+         * 是否固定，是(Y)/否(N)
+         * @default "N"
+         */
+        isAffix: 'Y' | 'N'
+        /**
+         * 是否隐藏，是(Y)/否(N)
+         * @default "N"
+         */
+        isHide: 'Y' | 'N'
+        children: any[]
+      }[],
+      any
+    >({
+      path: `/user/findResourceTree`,
       method: 'POST',
       body: data,
       type: ContentType.Json,

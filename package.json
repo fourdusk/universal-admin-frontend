@@ -1,13 +1,13 @@
 {
   "name": "universal-admin-frontend",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Universal admin frontend",
   "keywords": [
     "universal",
     "admin",
     "frontend"
   ],
-  "author": "fourdusk",
+  "author": "javionlog",
   "license": "MIT",
   "main": "src/main.ts",
   "type": "module",
@@ -20,13 +20,17 @@
     "prettier": "prettier --write **/*.{vue,js,jsx,ts,tsx,json,md,css,html}",
     "stylelint": "stylelint --fix **/*.{vue,css,html}",
     "lint-staged": "lint-staged --config ./lint-staged.config.js",
-    "api-generate": "tsx swagger/generate.ts"
+    "api-generate": "tsx swagger/generate.ts",
+    "type:check": "vue-tsc --noEmit --skipLibCheck"
   },
   "dependencies": {
     "@vueuse/core": "^11.1.0",
     "axios": "^1.7.7",
     "element-plus": "^2.8.5",
-    "vue": "^3.5.12"
+    "pinia": "^2.2.4",
+    "vue": "^3.5.12",
+    "vue-i18n": "^10.0.4",
+    "vue-router": "^4.4.5"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.5.0",
