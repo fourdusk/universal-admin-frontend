@@ -1,6 +1,5 @@
 import {
   PostRoleToResourceCreatePayload,
-  PostRoleToResourceFindAllPayload,
   PostRoleToResourceFindPayload,
   PostRoleToResourceRemovePayload
 } from './data-contracts'
@@ -29,12 +28,12 @@ export class RoleToResource<SecurityDataType = unknown> extends HttpClient<Secur
     delFlag: ("Y" | "N"),
   \**
    * 创建时间
-   * @default 1729735172479
+   * @default 1730253856572
    *\
     createdAt: number,
   \**
    * 更新时间
-   * @default 1729735172479
+   * @default 1730253856572
    *\
     updatedAt: number,
   \** 创建人 *\
@@ -65,12 +64,12 @@ export class RoleToResource<SecurityDataType = unknown> extends HttpClient<Secur
         delFlag: 'Y' | 'N'
         /**
          * 创建时间
-         * @default 1729735172479
+         * @default 1730253856572
          */
         createdAt: number
         /**
          * 更新时间
-         * @default 1729735172479
+         * @default 1730253856572
          */
         updatedAt: number
         /** 创建人 */
@@ -113,12 +112,12 @@ export class RoleToResource<SecurityDataType = unknown> extends HttpClient<Secur
     delFlag: ("Y" | "N"),
   \**
    * 创建时间
-   * @default 1729735172479
+   * @default 1730253856572
    *\
     createdAt: number,
   \**
    * 更新时间
-   * @default 1729735172479
+   * @default 1730253856572
    *\
     updatedAt: number,
   \** 创建人 *\
@@ -149,12 +148,12 @@ export class RoleToResource<SecurityDataType = unknown> extends HttpClient<Secur
         delFlag: 'Y' | 'N'
         /**
          * 创建时间
-         * @default 1729735172479
+         * @default 1730253856572
          */
         createdAt: number
         /**
          * 更新时间
-         * @default 1729735172479
+         * @default 1730253856572
          */
         updatedAt: number
         /** 创建人 */
@@ -198,12 +197,12 @@ export class RoleToResource<SecurityDataType = unknown> extends HttpClient<Secur
     delFlag: ("Y" | "N"),
   \**
    * 创建时间
-   * @default 1729735172479
+   * @default 1730253856572
    *\
     createdAt: number,
   \**
    * 更新时间
-   * @default 1729735172479
+   * @default 1730253856572
    *\
     updatedAt: number,
   \** 创建人 *\
@@ -238,12 +237,12 @@ export class RoleToResource<SecurityDataType = unknown> extends HttpClient<Secur
           delFlag: 'Y' | 'N'
           /**
            * 创建时间
-           * @default 1729735172479
+           * @default 1730253856572
            */
           createdAt: number
           /**
            * 更新时间
-           * @default 1729735172479
+           * @default 1730253856572
            */
           updatedAt: number
           /** 创建人 */
@@ -260,100 +259,6 @@ export class RoleToResource<SecurityDataType = unknown> extends HttpClient<Secur
       any
     >({
       path: `/roleToResource/find`,
-      method: 'POST',
-      body: data,
-      type: ContentType.Json,
-      format: 'json',
-      ...params
-    })
-  /**
- * No description
- *
- * @tags Permission
- * @name PostRoleToResourceFindAll
- * @summary 角色资源关系全部
- * @request POST:/roleToResource/findAll
- * @response `200` `{
-    records: ({
-    id: number,
-    remark: ((null | string) | null),
-  \**
-   * 排序
-   * @default 0
-   *\
-    sort: number,
-  \**
-   * 删除标记，已删除(Y)/未删除(N)
-   * @default "N"
-   *\
-    delFlag: ("Y" | "N"),
-  \**
-   * 创建时间
-   * @default 1729735172479
-   *\
-    createdAt: number,
-  \**
-   * 更新时间
-   * @default 1729735172479
-   *\
-    updatedAt: number,
-  \** 创建人 *\
-    createdBy: string,
-  \** 更新人 *\
-    updatedBy: string,
-  \** 角色编码 *\
-    roleCode: string,
-  \** 资源编码 *\
-    resourceCode: string,
-
-})[],
-    total: number,
-
-}`
- */
-  postRoleToResourceFindAll = (
-    data: PostRoleToResourceFindAllPayload,
-    params: RequestParams = {}
-  ) =>
-    this.request<
-      {
-        records: {
-          id: number
-          remark: (null | string) | null
-          /**
-           * 排序
-           * @default 0
-           */
-          sort: number
-          /**
-           * 删除标记，已删除(Y)/未删除(N)
-           * @default "N"
-           */
-          delFlag: 'Y' | 'N'
-          /**
-           * 创建时间
-           * @default 1729735172479
-           */
-          createdAt: number
-          /**
-           * 更新时间
-           * @default 1729735172479
-           */
-          updatedAt: number
-          /** 创建人 */
-          createdBy: string
-          /** 更新人 */
-          updatedBy: string
-          /** 角色编码 */
-          roleCode: string
-          /** 资源编码 */
-          resourceCode: string
-        }[]
-        total: number
-      },
-      any
-    >({
-      path: `/roleToResource/findAll`,
       method: 'POST',
       body: data,
       type: ContentType.Json,

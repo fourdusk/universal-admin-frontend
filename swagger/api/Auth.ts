@@ -29,12 +29,12 @@ export class Auth<SecurityDataType = unknown> extends HttpClient<SecurityDataTyp
     delFlag: ("Y" | "N"),
   \**
    * 创建时间
-   * @default 1729735172479
+   * @default 1730253856572
    *\
     createdAt: number,
   \**
    * 更新时间
-   * @default 1729735172479
+   * @default 1730253856572
    *\
     updatedAt: number,
   \** 创建人 *\
@@ -53,8 +53,10 @@ export class Auth<SecurityDataType = unknown> extends HttpClient<SecurityDataTyp
     parentId: number,
   \** 资源编码 *\
     resourceCode: string,
-  \** 资源名称 *\
-    resourceName: string,
+  \** 资源名称（英文） *\
+    resourceNameEn: string,
+  \** 资源名称（中文） *\
+    resourceNameZhCn: string,
   \**
    * 资源类型，菜单(Menu)/页面(Page)/元素(Element)
    * @default "Menu"
@@ -112,12 +114,12 @@ export class Auth<SecurityDataType = unknown> extends HttpClient<SecurityDataTyp
           delFlag: 'Y' | 'N'
           /**
            * 创建时间
-           * @default 1729735172479
+           * @default 1730253856572
            */
           createdAt: number
           /**
            * 更新时间
-           * @default 1729735172479
+           * @default 1730253856572
            */
           updatedAt: number
           /** 创建人 */
@@ -136,8 +138,10 @@ export class Auth<SecurityDataType = unknown> extends HttpClient<SecurityDataTyp
           parentId: number
           /** 资源编码 */
           resourceCode: string
-          /** 资源名称 */
-          resourceName: string
+          /** 资源名称（英文） */
+          resourceNameEn: string
+          /** 资源名称（中文） */
+          resourceNameZhCn: string
           /**
            * 资源类型，菜单(Menu)/页面(Page)/元素(Element)
            * @default "Menu"

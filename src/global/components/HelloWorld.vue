@@ -4,24 +4,24 @@ import { Auth } from 'swagger/api/Auth'
 import { Resource } from 'swagger/api/Resource'
 import { Role } from 'swagger/api/Role'
 import { User } from 'swagger/api/User'
-import { ref } from 'vue'
+import { computed, ref } from 'vue'
+
+import { LangType } from '@/global/config'
 
 defineOptions({
   name: 'HelloWorld'
 })
 
-interface Props {
-  msg: string
-}
-
-const props = defineProps<Props>()
-
+const appLang = ref(gbStore.useLocaleStore().lang)
+const langOptions = ref(gbStore.useLocaleStore().getLangOptions())
 const username = ref('')
 const password = ref('')
 const signInResult = ref({})
 const userFindResult = ref({})
 const roleFindResult = ref({})
 const resourceFindResult = ref({})
+const appName = computed(() => gbLocale.i18n.global.t('global.label.appName'))
+
 const buttonStyles = css({
   backgroundColor: 'pink.700',
   color: 'white',
@@ -59,10 +59,22 @@ const handleGetResourceList = async () => {
   const result = await resource.postResourceFind({})
   resourceFindResult.value = result
 }
+
+const handleLangChange = (val: LangType) => {
+  gbStore.useLocaleStore().setLang(val)
+}
 </script>
 
 <template>
-  <h1>{{ props.msg }}</h1>
+  <div>
+    <ElSelectV2
+      v-model="appLang"
+      :options="langOptions"
+      style="width: 240px"
+      @change="handleLangChange"
+    />
+    <span>{{ appName }}</span>
+  </div>
   <form action="">
     <div>
       <label for="">用户名</label>

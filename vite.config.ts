@@ -6,6 +6,7 @@ import autoImport from 'unplugin-auto-import/vite'
 import { FileSystemIconLoader as iconLoader } from 'unplugin-icons/loaders'
 import iconsResolver from 'unplugin-icons/resolver'
 import icons from 'unplugin-icons/vite'
+import { ElementPlusResolver as epResolver } from 'unplugin-vue-components/resolvers'
 import vueComponents from 'unplugin-vue-components/vite'
 import { defineConfig } from 'vite'
 
@@ -42,18 +43,25 @@ const config = defineConfig({
       }
     }),
     autoImport({
-      dirs: ['src/global/utils/expose'],
+      dirs: [
+        'src/global/config/_expose',
+        'src/global/locale/_expose',
+        'src/global/store/_expose',
+        'src/global/utils/_expose'
+      ],
       dts: 'src/global/types/auto-import.d.ts',
       eslintrc: {
         enabled: true,
         filepath: './.eslintrc-auto-import.json',
         globalsPropValue: true
-      }
+      },
+      resolvers: [epResolver()]
     }),
     vueComponents({
       dirs: ['src/global/components'],
       dts: 'src/global/types/components.d.ts',
       resolvers: [
+        epResolver(),
         iconsResolver({
           prefix: false,
           customCollections: ['vi']

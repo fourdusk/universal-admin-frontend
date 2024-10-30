@@ -1,5 +1,8 @@
 {
   "globals": {
-    "gbUtils": true
+    "gbUtils": true,
+    "gbLocale": true,
+    "gbStore": true,
+    "gbConfig": true
   }
 }

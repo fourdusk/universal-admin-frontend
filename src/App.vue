@@ -5,5 +5,5 @@ defineOptions({
 </script>
 
 <template>
-  <HelloWorld msg="vite + vue" />
+  <HelloWorld />
 </template>

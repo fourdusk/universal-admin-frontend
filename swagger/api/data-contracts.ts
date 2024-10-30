@@ -20,12 +20,12 @@ export interface PostRoleCreatePayload {
   delFlag?: 'Y' | 'N'
   /**
    * 创建时间
-   * @default 1729735172479
+   * @default 1730253856572
    */
   createdAt?: number
   /**
    * 更新时间
-   * @default 1729735172479
+   * @default 1730253856572
    */
   updatedAt?: number
   /** 创建人 */
@@ -58,12 +58,12 @@ export interface PostRoleUpdatePayload {
   delFlag: 'Y' | 'N'
   /**
    * 创建时间
-   * @default 1729735172479
+   * @default 1730253856572
    */
   createdAt: number
   /**
    * 更新时间
-   * @default 1729735172479
+   * @default 1730253856572
    */
   updatedAt: number
   /** 创建人 */
@@ -82,11 +82,13 @@ export interface PostRoleUpdatePayload {
 }
 
 export interface PostRoleRemovePayload {
-  id: number
+  /** 角色编码 */
+  roleCode: string
 }
 
 export interface PostRoleGetPayload {
-  id: number
+  /** 角色编码 */
+  roleCode: string
 }
 
 export interface PostRoleFindPayload {
@@ -114,6 +116,8 @@ export interface PostRoleFindPayload {
   roleCode?: string
   /** 角色名称 */
   roleName?: string
+  /** 是否返回全部数据 */
+  isReturnAll?: boolean
   /**
    * 第几页
    * @default 1
@@ -134,45 +138,11 @@ export interface PostRoleFindPayload {
   updatedTo?: number
 }
 
-export interface PostRoleFindAllPayload {
-  id?: number
-  remark?: (null | string) | null
-  /**
-   * 排序
-   * @default 0
-   */
-  sort?: number
-  /**
-   * 删除标记，已删除(Y)/未删除(N)
-   * @default "N"
-   */
-  delFlag?: 'Y' | 'N'
-  /** 创建人 */
-  createdBy?: string
-  /** 更新人 */
-  updatedBy?: string
-  /**
-   * 状态，启用(Y)/禁用(N)
-   * @default "N"
-   */
-  status?: 'Y' | 'N'
-  /** 角色编码 */
-  roleCode?: string
-  /** 角色名称 */
-  roleName?: string
-  /** 创建时间开始 */
-  createdFrom?: number
-  /** 创建时间结束 */
-  createdTo?: number
-  /** 更新时间开始 */
-  updatedFrom?: number
-  /** 更新时间结束 */
-  updatedTo?: number
-}
-
-export interface PostRoleFindUsersPayload {
+export interface PostRoleGetUsersPayload {
   /** 角色编码 */
   roleCode: string
+  /** 是否返回全部数据 */
+  isReturnAll?: boolean
   /**
    * 第几页
    * @default 1
@@ -185,14 +155,30 @@ export interface PostRoleFindUsersPayload {
   pageSize?: number
 }
 
-export interface PostRoleFindAllUsersPayload {
+export interface PostRoleGetResourcesPayload {
   /** 角色编码 */
   roleCode: string
+  /** 是否返回全部数据 */
+  isReturnAll?: boolean
+  /**
+   * 第几页
+   * @default 1
+   */
+  pageIndex?: number
+  /**
+   * 每页多少条
+   * @default 10
+   */
+  pageSize?: number
 }
 
 export interface PostRoleFindResourcesPayload {
   /** 角色编码 */
-  roleCode: string
+  roleCode?: string
+  /** 角色名称 */
+  roleName?: string
+  /** 是否返回全部数据 */
+  isReturnAll?: boolean
   /**
    * 第几页
    * @default 1
@@ -203,11 +189,6 @@ export interface PostRoleFindResourcesPayload {
    * @default 10
    */
   pageSize?: number
-}
-
-export interface PostRoleFindAllResourcesPayload {
-  /** 角色编码 */
-  roleCode: string
 }
 
 export interface PostResourceCreatePayload {
@@ -225,12 +206,12 @@ export interface PostResourceCreatePayload {
   delFlag?: 'Y' | 'N'
   /**
    * 创建时间
-   * @default 1729735172479
+   * @default 1730253856572
    */
   createdAt?: number
   /**
    * 更新时间
-   * @default 1729735172479
+   * @default 1730253856572
    */
   updatedAt?: number
   /** 创建人 */
@@ -249,8 +230,10 @@ export interface PostResourceCreatePayload {
   parentId: number
   /** 资源编码 */
   resourceCode: string
-  /** 资源名称 */
-  resourceName: string
+  /** 资源名称（英文） */
+  resourceNameEn: string
+  /** 资源名称（中文） */
+  resourceNameZhCn: string
   /**
    * 资源类型，菜单(Menu)/页面(Page)/元素(Element)
    * @default "Menu"
@@ -297,12 +280,12 @@ export interface PostResourceUpdatePayload {
   delFlag: 'Y' | 'N'
   /**
    * 创建时间
-   * @default 1729735172479
+   * @default 1730253856572
    */
   createdAt: number
   /**
    * 更新时间
-   * @default 1729735172479
+   * @default 1730253856572
    */
   updatedAt: number
   /** 创建人 */
@@ -321,8 +304,10 @@ export interface PostResourceUpdatePayload {
   parentId: number
   /** 资源编码 */
   resourceCode: string
-  /** 资源名称 */
-  resourceName: string
+  /** 资源名称（英文） */
+  resourceNameEn: string
+  /** 资源名称（中文） */
+  resourceNameZhCn: string
   /**
    * 资源类型，菜单(Menu)/页面(Page)/元素(Element)
    * @default "Menu"
@@ -355,11 +340,13 @@ export interface PostResourceUpdatePayload {
 }
 
 export interface PostResourceRemovePayload {
-  id: number
+  /** 资源编码 */
+  resourceCode: string
 }
 
 export interface PostResourceGetPayload {
-  id: number
+  /** 资源编码 */
+  resourceCode: string
 }
 
 export interface PostResourceFindPayload {
@@ -391,8 +378,10 @@ export interface PostResourceFindPayload {
   parentId?: number
   /** 资源编码 */
   resourceCode?: string
-  /** 资源名称 */
-  resourceName?: string
+  /** 资源名称（英文） */
+  resourceNameEn?: string
+  /** 资源名称（中文） */
+  resourceNameZhCn?: string
   /**
    * 资源类型，菜单(Menu)/页面(Page)/元素(Element)
    * @default "Menu"
@@ -422,6 +411,8 @@ export interface PostResourceFindPayload {
    * @default "N"
    */
   isHide?: 'Y' | 'N'
+  /** 是否返回全部数据 */
+  isReturnAll?: boolean
   /** 创建时间开始 */
   createdFrom?: number
   /** 创建时间结束 */
@@ -442,7 +433,7 @@ export interface PostResourceFindPayload {
   pageSize?: number
 }
 
-export interface PostResourceFindAllPayload {
+export interface PostResourceFindTreePayload {
   id?: number
   remark?: (null | string) | null
   /**
@@ -471,8 +462,10 @@ export interface PostResourceFindAllPayload {
   parentId?: number
   /** 资源编码 */
   resourceCode?: string
-  /** 资源名称 */
-  resourceName?: string
+  /** 资源名称（英文） */
+  resourceNameEn?: string
+  /** 资源名称（中文） */
+  resourceNameZhCn?: string
   /**
    * 资源类型，菜单(Menu)/页面(Page)/元素(Element)
    * @default "Menu"
@@ -512,9 +505,11 @@ export interface PostResourceFindAllPayload {
   updatedTo?: number
 }
 
-export interface PostResourceFindUsersPayload {
+export interface PostResourceGetUsersPayload {
   /** 资源编码 */
   resourceCode: string
+  /** 是否返回全部数据 */
+  isReturnAll?: boolean
   /**
    * 第几页
    * @default 1
@@ -527,14 +522,11 @@ export interface PostResourceFindUsersPayload {
   pageSize?: number
 }
 
-export interface PostResourceFindAllUsersPayload {
+export interface PostResourceGetRolesPayload {
   /** 资源编码 */
   resourceCode: string
-}
-
-export interface PostResourceFindRolesPayload {
-  /** 资源编码 */
-  resourceCode: string
+  /** 是否返回全部数据 */
+  isReturnAll?: boolean
   /**
    * 第几页
    * @default 1
@@ -545,11 +537,6 @@ export interface PostResourceFindRolesPayload {
    * @default 10
    */
   pageSize?: number
-}
-
-export interface PostResourceFindAllRolesPayload {
-  /** 资源编码 */
-  resourceCode: string
 }
 
 export interface PostUserToRoleCreatePayload {
@@ -567,12 +554,12 @@ export interface PostUserToRoleCreatePayload {
   delFlag?: 'Y' | 'N'
   /**
    * 创建时间
-   * @default 1729735172479
+   * @default 1730253856572
    */
   createdAt?: number
   /**
    * 更新时间
-   * @default 1729735172479
+   * @default 1730253856572
    */
   updatedAt?: number
   /** 创建人 */
@@ -586,7 +573,10 @@ export interface PostUserToRoleCreatePayload {
 }
 
 export interface PostUserToRoleRemovePayload {
-  id: number
+  /** 用户名 */
+  username: string
+  /** 角色编码 */
+  roleCode: string
 }
 
 export interface PostUserToRoleFindPayload {
@@ -676,12 +666,12 @@ export interface PostRoleToResourceCreatePayload {
   delFlag?: 'Y' | 'N'
   /**
    * 创建时间
-   * @default 1729735172479
+   * @default 1730253856572
    */
   createdAt?: number
   /**
    * 更新时间
-   * @default 1729735172479
+   * @default 1730253856572
    */
   updatedAt?: number
   /** 创建人 */
@@ -695,7 +685,10 @@ export interface PostRoleToResourceCreatePayload {
 }
 
 export interface PostRoleToResourceRemovePayload {
-  id: number
+  /** 角色编码 */
+  roleCode: string
+  /** 资源编码 */
+  resourceCode: string
 }
 
 export interface PostRoleToResourceFindPayload {
@@ -719,6 +712,8 @@ export interface PostRoleToResourceFindPayload {
   roleCode?: string
   /** 资源编码 */
   resourceCode?: string
+  /** 是否返回全部数据 */
+  isReturnAll?: boolean
   /** 创建时间开始 */
   createdFrom?: number
   /** 创建时间结束 */
@@ -739,37 +734,6 @@ export interface PostRoleToResourceFindPayload {
   pageSize?: number
 }
 
-export interface PostRoleToResourceFindAllPayload {
-  id?: number
-  remark?: (null | string) | null
-  /**
-   * 排序
-   * @default 0
-   */
-  sort?: number
-  /**
-   * 删除标记，已删除(Y)/未删除(N)
-   * @default "N"
-   */
-  delFlag?: 'Y' | 'N'
-  /** 创建人 */
-  createdBy?: string
-  /** 更新人 */
-  updatedBy?: string
-  /** 角色编码 */
-  roleCode?: string
-  /** 资源编码 */
-  resourceCode?: string
-  /** 创建时间开始 */
-  createdFrom?: number
-  /** 创建时间结束 */
-  createdTo?: number
-  /** 更新时间开始 */
-  updatedFrom?: number
-  /** 更新时间结束 */
-  updatedTo?: number
-}
-
 export interface PostUserCreatePayload {
   id?: number
   remark?: (null | string) | null
@@ -785,12 +749,12 @@ export interface PostUserCreatePayload {
   delFlag?: 'Y' | 'N'
   /**
    * 创建时间
-   * @default 1729735172479
+   * @default 1730253856572
    */
   createdAt?: number
   /**
    * 更新时间
-   * @default 1729735172479
+   * @default 1730253856572
    */
   updatedAt?: number
   /** 创建人 */
@@ -830,12 +794,12 @@ export interface PostUserUpdatePayload {
   delFlag: 'Y' | 'N'
   /**
    * 创建时间
-   * @default 1729735172479
+   * @default 1730253856572
    */
   createdAt: number
   /**
    * 更新时间
-   * @default 1729735172479
+   * @default 1730253856572
    */
   updatedAt: number
   /** 创建人 */
@@ -861,11 +825,13 @@ export interface PostUserUpdatePayload {
 }
 
 export interface PostUserRemovePayload {
-  id: number
+  /** 用户名 */
+  username: string
 }
 
 export interface PostUserGetPayload {
-  id: number
+  /** 用户名 */
+  username: string
 }
 
 export interface PostUserFindPayload {
@@ -896,6 +862,8 @@ export interface PostUserFindPayload {
    * @default "N"
    */
   isAdmin?: 'Y' | 'N'
+  /** 是否返回全部数据 */
+  isReturnAll?: boolean
   /**
    * 第几页
    * @default 1
@@ -916,52 +884,41 @@ export interface PostUserFindPayload {
   updatedTo?: number
 }
 
-export interface PostUserFindAllPayload {
-  id?: number
-  remark?: (null | string) | null
-  /**
-   * 排序
-   * @default 0
-   */
-  sort?: number
-  /**
-   * 删除标记，已删除(Y)/未删除(N)
-   * @default "N"
-   */
-  delFlag?: 'Y' | 'N'
-  /** 创建人 */
-  createdBy?: string
-  /** 更新人 */
-  updatedBy?: string
-  /**
-   * 状态，启用(Y)/禁用(N)
-   * @default "N"
-   */
-  status?: 'Y' | 'N'
+export interface PostUserGetRolesPayload {
   /** 用户名 */
-  username?: string
-  /** 密码 */
-  password?: string
+  username: string
   /**
-   * 是否管理员，是(Y)/否(N)
-   * @default "N"
+   * 第几页
+   * @default 1
    */
-  isAdmin?: 'Y' | 'N'
-  /** 最后登录时间 */
-  lastSignInAt?: number | null
-  /** 创建时间开始 */
-  createdFrom?: number
-  /** 创建时间结束 */
-  createdTo?: number
-  /** 更新时间开始 */
-  updatedFrom?: number
-  /** 更新时间结束 */
-  updatedTo?: number
+  pageIndex?: number
+  /**
+   * 每页多少条
+   * @default 10
+   */
+  pageSize?: number
+}
+
+export interface PostUserGetResourcesPayload {
+  /** 用户名 */
+  username: string
+  /**
+   * 第几页
+   * @default 1
+   */
+  pageIndex?: number
+  /**
+   * 每页多少条
+   * @default 10
+   */
+  pageSize?: number
 }
 
 export interface PostUserFindRolesPayload {
   /** 用户名 */
-  username: string
+  username?: string
+  /** 是否返回全部数据 */
+  isReturnAll?: boolean
   /**
    * 第几页
    * @default 1
@@ -972,16 +929,13 @@ export interface PostUserFindRolesPayload {
    * @default 10
    */
   pageSize?: number
-}
-
-export interface PostUserFindAllRolesPayload {
-  /** 用户名 */
-  username: string
 }
 
 export interface PostUserFindResourcesPayload {
   /** 用户名 */
-  username: string
+  username?: string
+  /** 是否返回全部数据 */
+  isReturnAll?: boolean
   /**
    * 第几页
    * @default 1
@@ -992,11 +946,6 @@ export interface PostUserFindResourcesPayload {
    * @default 10
    */
   pageSize?: number
-}
-
-export interface PostUserFindAllResourcesPayload {
-  /** 用户名 */
-  username: string
 }
 
 export interface PostUserFindResourceTreePayload {
