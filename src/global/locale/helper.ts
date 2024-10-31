@@ -1,7 +1,7 @@
 export const getAppLang = (): LangType => {
   let appLang = gbUtils.localStorager.getItem(gbConfig.langStorageKey) as null | string
   if (!appLang) {
-    appLang = navigator.language
+    appLang = navigator.language.toLowerCase()
   }
   // 如果获取不到浏览器设置语言，或者语言不被支持，则返回优先支持语言
   const langItem = gbConfig.supportedLangOptions.find(o => o.value === appLang)

@@ -7,12 +7,12 @@ export const supportedLangOptions = [
   },
   {
     label: '简体中文',
-    value: 'zh-CN'
+    value: 'zh-cn'
   }
 ] as const
 
 export const localeConfig = {
-  fallbackLocale: 'zh-CN'
+  fallbackLocale: 'en'
 } as const
 
 export type LangType = (typeof supportedLangOptions)[number]['value']
