@@ -1,7 +1,7 @@
 export default {
   global: {
     label: {
-      appName: 'General Admin'
+      appName: 'Universal Admin'
     },
     action: {
       operate: 'Operation',

@@ -26,7 +26,7 @@ export const loadAppLang = async (lang: LangType): Promise<void> => {
     if (store.loadedLangs.includes(lang)) {
       setAppLang(lang)
     } else {
-      const langModule = (await import(`./support/${lang}.ts`)) as { default: object }
+      const langModule = (await import(`./support/${lang}/index.ts`)) as { default: object }
       gbLocale.i18n.global.setLocaleMessage(lang, langModule.default)
       store.appendLoadedLang(lang)
       setAppLang(lang)
