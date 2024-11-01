@@ -1,5 +1,5 @@
 export const getAppLang = (): LangType => {
-  let appLang = gbUtils.localStorager.getItem(gbConfig.langStorageKey) as null | string
+  let appLang = gbUtil.localStorager.getItem(gbConfig.langStorageKey) as null | string
   if (!appLang) {
     appLang = navigator.language.toLowerCase()
   }

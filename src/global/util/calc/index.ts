@@ -1,8 +1,8 @@
 export const fixDecimal = (num: number, digit = 0) => {
-  if (!gbUtils.isNumber(num)) {
+  if (!gbUtil.isNumber(num)) {
     throw new Error('First param is not number')
   }
-  if (!gbUtils.isNumber(digit)) {
+  if (!gbUtil.isNumber(digit)) {
     throw new Error('Second param is not number')
   }
   const finalNum = Math.round((num + Number.EPSILON) * 10 ** digit) / 10 ** digit
@@ -13,7 +13,7 @@ export const summate = (nums: number[]) => {
   if (!Array.isArray(nums)) {
     throw new Error('First param is not array')
   }
-  const numList = nums.filter(n => gbUtils.isNumber(n))
+  const numList = nums.filter(n => gbUtil.isNumber(n))
   if (numList.length === 0) {
     return null
   }
@@ -41,7 +41,7 @@ export const multiply = (nums: number[]) => {
   if (!Array.isArray(nums)) {
     throw new Error('First param is not array')
   }
-  const numList = nums.filter(n => gbUtils.isNumber(n))
+  const numList = nums.filter(n => gbUtil.isNumber(n))
   if (numList.length === 0) {
     return null
   }

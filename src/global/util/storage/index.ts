@@ -11,7 +11,7 @@ const createStorager = (storager: Storage, prefix = 'uni_', delimiter = '|') => 
     const len = storager.length
     for (let i = 0; i < len; i += 1) {
       const key = storager.key(i)
-      if (!gbUtils.isNullOrUndefined(key)) {
+      if (!gbUtil.isNullOrUndefined(key)) {
         result.push(key)
       }
     }
@@ -21,11 +21,11 @@ const createStorager = (storager: Storage, prefix = 'uni_', delimiter = '|') => 
   const setItem = (k: string, v: string, expired?: Date | number | string) => {
     let key = k
     let val = v
-    if (gbUtils.isObject(v) || gbUtils.isArray(v)) {
+    if (gbUtil.isObject(v) || gbUtil.isArray(v)) {
       val = JSON.stringify(v)
     }
-    if (!gbUtils.isNullOrUndefined(expired)) {
-      key = `${k}${delimiter}${gbUtils.formatTime(expired)}`
+    if (!gbUtil.isNullOrUndefined(expired)) {
+      key = `${k}${delimiter}${gbUtil.formatTime(expired)}`
     }
     storager.setItem(encodeKey(key), val)
   }
@@ -33,7 +33,7 @@ const createStorager = (storager: Storage, prefix = 'uni_', delimiter = '|') => 
   const removeItem = (k: string) => {
     const keys = getAllKey()
     const key = keys.find(v => v.startsWith(encodeKey(k)))
-    if (!gbUtils.isNullOrUndefined(key)) {
+    if (!gbUtil.isNullOrUndefined(key)) {
       storager.removeItem(key)
     }
   }
@@ -41,18 +41,18 @@ const createStorager = (storager: Storage, prefix = 'uni_', delimiter = '|') => 
   const getItem = <T extends string | object>(k: string) => {
     const keys = getAllKey()
     const key = keys.find(v => v.startsWith(encodeKey(k)))
-    if (gbUtils.isNullOrUndefined(key)) {
+    if (gbUtil.isNullOrUndefined(key)) {
       return null
     }
     const [, expiredTime] = key.split(delimiter)
     const time = new Date(expiredTime).getTime()
     const now = Date.now()
-    if (!gbUtils.isNullOrUndefined(expiredTime) && now > time) {
+    if (!gbUtil.isNullOrUndefined(expiredTime) && now > time) {
       removeItem(k)
       return null
     }
     const result = storager.getItem(key)
-    if (!gbUtils.isNullOrUndefined(result)) {
+    if (!gbUtil.isNullOrUndefined(result)) {
       try {
         return JSON.parse(result) as T
       } catch {

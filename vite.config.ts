@@ -47,9 +47,9 @@ const config = defineConfig({
         'src/global/config/_expose',
         'src/global/locale/_expose',
         'src/global/store/_expose',
-        'src/global/utils/_expose'
+        'src/global/util/_expose'
       ],
-      dts: 'src/global/types/auto-import.d.ts',
+      dts: 'src/global/type/auto-import.d.ts',
       eslintrc: {
         enabled: true,
         filepath: './.eslintrc-auto-import.json',
@@ -58,8 +58,8 @@ const config = defineConfig({
       resolvers: [epResolver()]
     }),
     vueComponents({
-      dirs: ['src/global/components'],
-      dts: 'src/global/types/components.d.ts',
+      dirs: ['src/global/component'],
+      dts: 'src/global/type/component.d.ts',
       resolvers: [
         epResolver(),
         iconsResolver({

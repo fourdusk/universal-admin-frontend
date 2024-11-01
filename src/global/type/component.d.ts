@@ -8,7 +8,7 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     ElSelectV2: typeof import('element-plus/es')['ElSelectV2']
-    HelloWorld: typeof import('./../components/HelloWorld.vue')['default']
+    HelloWorld: typeof import('./../component/HelloWorld.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
   }

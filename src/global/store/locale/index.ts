@@ -18,12 +18,12 @@ export const useLocaleStore = defineStore('locale', {
     async setLang(lang: LangType) {
       this.lang = lang
       await gbLocale.loadAppLang(lang)
-      gbUtils.localStorager.setItem(gbConfig.langStorageKey, lang)
+      gbUtil.localStorager.setItem(gbConfig.langStorageKey, lang)
       this.setDocumentTitle()
     },
     setDocumentTitle(resourceName?: string) {
       const appName = gbLocale.i18n.global.t('global.label.appName')
-      document.title = gbUtils.isString(resourceName) ? `${resourceName} - ${appName}` : appName
+      document.title = gbUtil.isString(resourceName) ? `${resourceName} - ${appName}` : appName
     },
     setLoadedLangs(langs: LangType[]) {
       this.loadedLangs = langs
