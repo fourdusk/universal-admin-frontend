@@ -4,12 +4,12 @@ export type Resource = {
   id: number
   remark: null | string
   sort: number
-  delFlag: BoolMap
+  delFlag: BoolType
   createdAt: number
   updatedAt: number
   createdBy: string
   updatedBy: string
-  status: BoolMap
+  status: BoolType
   parentId: number
   resourceCode: string
   resourceNameEn: string
@@ -19,9 +19,9 @@ export type Resource = {
   activePath: null | string
   component: null | string
   icon: null | string
-  isLink: BoolMap
-  isCache: BoolMap
-  isAffix: BoolMap
-  isHide: BoolMap
+  isLink: BoolType
+  isCache: BoolType
+  isAffix: BoolType
+  isHide: BoolType
   children: Resource[]
 }
