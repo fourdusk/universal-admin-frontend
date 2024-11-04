@@ -22,7 +22,8 @@ export class User<SecurityDataType = unknown> extends HttpClient<SecurityDataTyp
  * @request POST:/user/create
  * @response `200` `{
     id: number,
-    remark: ((null | string) | null),
+  \** 备注 *\
+    remark: (string | null),
   \**
    * 排序
    * @default 0
@@ -35,12 +36,12 @@ export class User<SecurityDataType = unknown> extends HttpClient<SecurityDataTyp
     delFlag: ("Y" | "N"),
   \**
    * 创建时间
-   * @default 1730253856572
+   * @default 1730691246457
    *\
     createdAt: number,
   \**
    * 更新时间
-   * @default 1730253856572
+   * @default 1730691246457
    *\
     updatedAt: number,
   \** 创建人 *\
@@ -68,7 +69,8 @@ export class User<SecurityDataType = unknown> extends HttpClient<SecurityDataTyp
     this.request<
       {
         id: number
-        remark: (null | string) | null
+        /** 备注 */
+        remark: string | null
         /**
          * 排序
          * @default 0
@@ -81,12 +83,12 @@ export class User<SecurityDataType = unknown> extends HttpClient<SecurityDataTyp
         delFlag: 'Y' | 'N'
         /**
          * 创建时间
-         * @default 1730253856572
+         * @default 1730691246457
          */
         createdAt: number
         /**
          * 更新时间
-         * @default 1730253856572
+         * @default 1730691246457
          */
         updatedAt: number
         /** 创建人 */
@@ -126,7 +128,8 @@ export class User<SecurityDataType = unknown> extends HttpClient<SecurityDataTyp
  * @request POST:/user/update
  * @response `200` `{
     id: number,
-    remark: ((null | string) | null),
+  \** 备注 *\
+    remark: (string | null),
   \**
    * 排序
    * @default 0
@@ -139,12 +142,12 @@ export class User<SecurityDataType = unknown> extends HttpClient<SecurityDataTyp
     delFlag: ("Y" | "N"),
   \**
    * 创建时间
-   * @default 1730253856572
+   * @default 1730691246457
    *\
     createdAt: number,
   \**
    * 更新时间
-   * @default 1730253856572
+   * @default 1730691246457
    *\
     updatedAt: number,
   \** 创建人 *\
@@ -172,7 +175,8 @@ export class User<SecurityDataType = unknown> extends HttpClient<SecurityDataTyp
     this.request<
       {
         id: number
-        remark: (null | string) | null
+        /** 备注 */
+        remark: string | null
         /**
          * 排序
          * @default 0
@@ -185,12 +189,12 @@ export class User<SecurityDataType = unknown> extends HttpClient<SecurityDataTyp
         delFlag: 'Y' | 'N'
         /**
          * 创建时间
-         * @default 1730253856572
+         * @default 1730691246457
          */
         createdAt: number
         /**
          * 更新时间
-         * @default 1730253856572
+         * @default 1730691246457
          */
         updatedAt: number
         /** 创建人 */
@@ -230,7 +234,8 @@ export class User<SecurityDataType = unknown> extends HttpClient<SecurityDataTyp
  * @request POST:/user/remove
  * @response `200` `{
     id: number,
-    remark: ((null | string) | null),
+  \** 备注 *\
+    remark: (string | null),
   \**
    * 排序
    * @default 0
@@ -243,12 +248,12 @@ export class User<SecurityDataType = unknown> extends HttpClient<SecurityDataTyp
     delFlag: ("Y" | "N"),
   \**
    * 创建时间
-   * @default 1730253856572
+   * @default 1730691246457
    *\
     createdAt: number,
   \**
    * 更新时间
-   * @default 1730253856572
+   * @default 1730691246457
    *\
     updatedAt: number,
   \** 创建人 *\
@@ -276,7 +281,8 @@ export class User<SecurityDataType = unknown> extends HttpClient<SecurityDataTyp
     this.request<
       {
         id: number
-        remark: (null | string) | null
+        /** 备注 */
+        remark: string | null
         /**
          * 排序
          * @default 0
@@ -289,12 +295,12 @@ export class User<SecurityDataType = unknown> extends HttpClient<SecurityDataTyp
         delFlag: 'Y' | 'N'
         /**
          * 创建时间
-         * @default 1730253856572
+         * @default 1730691246457
          */
         createdAt: number
         /**
          * 更新时间
-         * @default 1730253856572
+         * @default 1730691246457
          */
         updatedAt: number
         /** 创建人 */
@@ -334,7 +340,8 @@ export class User<SecurityDataType = unknown> extends HttpClient<SecurityDataTyp
  * @request POST:/user/get
  * @response `200` `{
     id: number,
-    remark: ((null | string) | null),
+  \** 备注 *\
+    remark: (string | null),
   \**
    * 排序
    * @default 0
@@ -347,12 +354,12 @@ export class User<SecurityDataType = unknown> extends HttpClient<SecurityDataTyp
     delFlag: ("Y" | "N"),
   \**
    * 创建时间
-   * @default 1730253856572
+   * @default 1730691246457
    *\
     createdAt: number,
   \**
    * 更新时间
-   * @default 1730253856572
+   * @default 1730691246457
    *\
     updatedAt: number,
   \** 创建人 *\
@@ -380,7 +387,8 @@ export class User<SecurityDataType = unknown> extends HttpClient<SecurityDataTyp
     this.request<
       {
         id: number
-        remark: (null | string) | null
+        /** 备注 */
+        remark: string | null
         /**
          * 排序
          * @default 0
@@ -393,12 +401,12 @@ export class User<SecurityDataType = unknown> extends HttpClient<SecurityDataTyp
         delFlag: 'Y' | 'N'
         /**
          * 创建时间
-         * @default 1730253856572
+         * @default 1730691246457
          */
         createdAt: number
         /**
          * 更新时间
-         * @default 1730253856572
+         * @default 1730691246457
          */
         updatedAt: number
         /** 创建人 */
@@ -439,7 +447,8 @@ export class User<SecurityDataType = unknown> extends HttpClient<SecurityDataTyp
  * @response `200` `{
     records: ({
     id: number,
-    remark: ((null | string) | null),
+  \** 备注 *\
+    remark: (string | null),
   \**
    * 排序
    * @default 0
@@ -452,12 +461,12 @@ export class User<SecurityDataType = unknown> extends HttpClient<SecurityDataTyp
     delFlag: ("Y" | "N"),
   \**
    * 创建时间
-   * @default 1730253856572
+   * @default 1730691246457
    *\
     createdAt: number,
   \**
    * 更新时间
-   * @default 1730253856572
+   * @default 1730691246457
    *\
     updatedAt: number,
   \** 创建人 *\
@@ -489,7 +498,8 @@ export class User<SecurityDataType = unknown> extends HttpClient<SecurityDataTyp
       {
         records: {
           id: number
-          remark: (null | string) | null
+          /** 备注 */
+          remark: string | null
           /**
            * 排序
            * @default 0
@@ -502,12 +512,12 @@ export class User<SecurityDataType = unknown> extends HttpClient<SecurityDataTyp
           delFlag: 'Y' | 'N'
           /**
            * 创建时间
-           * @default 1730253856572
+           * @default 1730691246457
            */
           createdAt: number
           /**
            * 更新时间
-           * @default 1730253856572
+           * @default 1730691246457
            */
           updatedAt: number
           /** 创建人 */
@@ -550,7 +560,8 @@ export class User<SecurityDataType = unknown> extends HttpClient<SecurityDataTyp
  * @response `200` `{
     records: ({
     id: number,
-    remark: ((null | string) | null),
+  \** 备注 *\
+    remark: (string | null),
   \**
    * 排序
    * @default 0
@@ -563,12 +574,12 @@ export class User<SecurityDataType = unknown> extends HttpClient<SecurityDataTyp
     delFlag: ("Y" | "N"),
   \**
    * 创建时间
-   * @default 1730253856572
+   * @default 1730691246457
    *\
     createdAt: number,
   \**
    * 更新时间
-   * @default 1730253856572
+   * @default 1730691246457
    *\
     updatedAt: number,
   \** 创建人 *\
@@ -595,7 +606,8 @@ export class User<SecurityDataType = unknown> extends HttpClient<SecurityDataTyp
       {
         records: {
           id: number
-          remark: (null | string) | null
+          /** 备注 */
+          remark: string | null
           /**
            * 排序
            * @default 0
@@ -608,12 +620,12 @@ export class User<SecurityDataType = unknown> extends HttpClient<SecurityDataTyp
           delFlag: 'Y' | 'N'
           /**
            * 创建时间
-           * @default 1730253856572
+           * @default 1730691246457
            */
           createdAt: number
           /**
            * 更新时间
-           * @default 1730253856572
+           * @default 1730691246457
            */
           updatedAt: number
           /** 创建人 */
@@ -651,7 +663,8 @@ export class User<SecurityDataType = unknown> extends HttpClient<SecurityDataTyp
  * @response `200` `{
     records: ({
     id: number,
-    remark: ((null | string) | null),
+  \** 备注 *\
+    remark: (string | null),
   \**
    * 排序
    * @default 0
@@ -664,12 +677,12 @@ export class User<SecurityDataType = unknown> extends HttpClient<SecurityDataTyp
     delFlag: ("Y" | "N"),
   \**
    * 创建时间
-   * @default 1730253856572
+   * @default 1730691246457
    *\
     createdAt: number,
   \**
    * 更新时间
-   * @default 1730253856572
+   * @default 1730691246457
    *\
     updatedAt: number,
   \** 创建人 *\
@@ -697,10 +710,14 @@ export class User<SecurityDataType = unknown> extends HttpClient<SecurityDataTyp
    * @default "Menu"
    *\
     resourceType: ("Menu" | "Pgae" | "Element"),
-    path: ((null | string) | null),
-    activePath: ((null | string) | null),
-    component: ((null | string) | null),
-    icon: ((null | string) | null),
+  \** 页面路径 *\
+    path: (string | null),
+  \** 激活路径 *\
+    activePath: (string | null),
+  \** 组件路径 *\
+    component: (string | null),
+  \** 图标 *\
+    icon: (string | null),
   \**
    * 是否外链，是(Y)/否(N)
    * @default "N"
@@ -732,7 +749,8 @@ export class User<SecurityDataType = unknown> extends HttpClient<SecurityDataTyp
       {
         records: {
           id: number
-          remark: (null | string) | null
+          /** 备注 */
+          remark: string | null
           /**
            * 排序
            * @default 0
@@ -745,12 +763,12 @@ export class User<SecurityDataType = unknown> extends HttpClient<SecurityDataTyp
           delFlag: 'Y' | 'N'
           /**
            * 创建时间
-           * @default 1730253856572
+           * @default 1730691246457
            */
           createdAt: number
           /**
            * 更新时间
-           * @default 1730253856572
+           * @default 1730691246457
            */
           updatedAt: number
           /** 创建人 */
@@ -778,10 +796,14 @@ export class User<SecurityDataType = unknown> extends HttpClient<SecurityDataTyp
            * @default "Menu"
            */
           resourceType: 'Menu' | 'Pgae' | 'Element'
-          path: (null | string) | null
-          activePath: (null | string) | null
-          component: (null | string) | null
-          icon: (null | string) | null
+          /** 页面路径 */
+          path: string | null
+          /** 激活路径 */
+          activePath: string | null
+          /** 组件路径 */
+          component: string | null
+          /** 图标 */
+          icon: string | null
           /**
            * 是否外链，是(Y)/否(N)
            * @default "N"
@@ -824,7 +846,8 @@ export class User<SecurityDataType = unknown> extends HttpClient<SecurityDataTyp
  * @response `200` `{
     records: ({
     id: number,
-    remark: ((null | string) | null),
+  \** 备注 *\
+    remark: (string | null),
   \**
    * 排序
    * @default 0
@@ -837,12 +860,12 @@ export class User<SecurityDataType = unknown> extends HttpClient<SecurityDataTyp
     delFlag: ("Y" | "N"),
   \**
    * 创建时间
-   * @default 1730253856572
+   * @default 1730691246457
    *\
     createdAt: number,
   \**
    * 更新时间
-   * @default 1730253856572
+   * @default 1730691246457
    *\
     updatedAt: number,
   \** 创建人 *\
@@ -869,7 +892,8 @@ export class User<SecurityDataType = unknown> extends HttpClient<SecurityDataTyp
       {
         records: {
           id: number
-          remark: (null | string) | null
+          /** 备注 */
+          remark: string | null
           /**
            * 排序
            * @default 0
@@ -882,12 +906,12 @@ export class User<SecurityDataType = unknown> extends HttpClient<SecurityDataTyp
           delFlag: 'Y' | 'N'
           /**
            * 创建时间
-           * @default 1730253856572
+           * @default 1730691246457
            */
           createdAt: number
           /**
            * 更新时间
-           * @default 1730253856572
+           * @default 1730691246457
            */
           updatedAt: number
           /** 创建人 */
@@ -925,7 +949,8 @@ export class User<SecurityDataType = unknown> extends HttpClient<SecurityDataTyp
  * @response `200` `{
     records: ({
     id: number,
-    remark: ((null | string) | null),
+  \** 备注 *\
+    remark: (string | null),
   \**
    * 排序
    * @default 0
@@ -938,12 +963,12 @@ export class User<SecurityDataType = unknown> extends HttpClient<SecurityDataTyp
     delFlag: ("Y" | "N"),
   \**
    * 创建时间
-   * @default 1730253856572
+   * @default 1730691246457
    *\
     createdAt: number,
   \**
    * 更新时间
-   * @default 1730253856572
+   * @default 1730691246457
    *\
     updatedAt: number,
   \** 创建人 *\
@@ -971,10 +996,14 @@ export class User<SecurityDataType = unknown> extends HttpClient<SecurityDataTyp
    * @default "Menu"
    *\
     resourceType: ("Menu" | "Pgae" | "Element"),
-    path: ((null | string) | null),
-    activePath: ((null | string) | null),
-    component: ((null | string) | null),
-    icon: ((null | string) | null),
+  \** 页面路径 *\
+    path: (string | null),
+  \** 激活路径 *\
+    activePath: (string | null),
+  \** 组件路径 *\
+    component: (string | null),
+  \** 图标 *\
+    icon: (string | null),
   \**
    * 是否外链，是(Y)/否(N)
    * @default "N"
@@ -1006,7 +1035,8 @@ export class User<SecurityDataType = unknown> extends HttpClient<SecurityDataTyp
       {
         records: {
           id: number
-          remark: (null | string) | null
+          /** 备注 */
+          remark: string | null
           /**
            * 排序
            * @default 0
@@ -1019,12 +1049,12 @@ export class User<SecurityDataType = unknown> extends HttpClient<SecurityDataTyp
           delFlag: 'Y' | 'N'
           /**
            * 创建时间
-           * @default 1730253856572
+           * @default 1730691246457
            */
           createdAt: number
           /**
            * 更新时间
-           * @default 1730253856572
+           * @default 1730691246457
            */
           updatedAt: number
           /** 创建人 */
@@ -1052,10 +1082,14 @@ export class User<SecurityDataType = unknown> extends HttpClient<SecurityDataTyp
            * @default "Menu"
            */
           resourceType: 'Menu' | 'Pgae' | 'Element'
-          path: (null | string) | null
-          activePath: (null | string) | null
-          component: (null | string) | null
-          icon: (null | string) | null
+          /** 页面路径 */
+          path: string | null
+          /** 激活路径 */
+          activePath: string | null
+          /** 组件路径 */
+          component: string | null
+          /** 图标 */
+          icon: string | null
           /**
            * 是否外链，是(Y)/否(N)
            * @default "N"
@@ -1097,7 +1131,8 @@ export class User<SecurityDataType = unknown> extends HttpClient<SecurityDataTyp
  * @request POST:/user/findResourceTree
  * @response `200` `({
     id: number,
-    remark: ((null | string) | null),
+  \** 备注 *\
+    remark: (string | null),
   \**
    * 排序
    * @default 0
@@ -1110,12 +1145,12 @@ export class User<SecurityDataType = unknown> extends HttpClient<SecurityDataTyp
     delFlag: ("Y" | "N"),
   \**
    * 创建时间
-   * @default 1730253856572
+   * @default 1730691246457
    *\
     createdAt: number,
   \**
    * 更新时间
-   * @default 1730253856572
+   * @default 1730691246457
    *\
     updatedAt: number,
   \** 创建人 *\
@@ -1143,10 +1178,14 @@ export class User<SecurityDataType = unknown> extends HttpClient<SecurityDataTyp
    * @default "Menu"
    *\
     resourceType: ("Menu" | "Pgae" | "Element"),
-    path: ((null | string) | null),
-    activePath: ((null | string) | null),
-    component: ((null | string) | null),
-    icon: ((null | string) | null),
+  \** 页面路径 *\
+    path: (string | null),
+  \** 激活路径 *\
+    activePath: (string | null),
+  \** 组件路径 *\
+    component: (string | null),
+  \** 图标 *\
+    icon: (string | null),
   \**
    * 是否外链，是(Y)/否(N)
    * @default "N"
@@ -1175,7 +1214,8 @@ export class User<SecurityDataType = unknown> extends HttpClient<SecurityDataTyp
     this.request<
       {
         id: number
-        remark: (null | string) | null
+        /** 备注 */
+        remark: string | null
         /**
          * 排序
          * @default 0
@@ -1188,12 +1228,12 @@ export class User<SecurityDataType = unknown> extends HttpClient<SecurityDataTyp
         delFlag: 'Y' | 'N'
         /**
          * 创建时间
-         * @default 1730253856572
+         * @default 1730691246457
          */
         createdAt: number
         /**
          * 更新时间
-         * @default 1730253856572
+         * @default 1730691246457
          */
         updatedAt: number
         /** 创建人 */
@@ -1221,10 +1261,14 @@ export class User<SecurityDataType = unknown> extends HttpClient<SecurityDataTyp
          * @default "Menu"
          */
         resourceType: 'Menu' | 'Pgae' | 'Element'
-        path: (null | string) | null
-        activePath: (null | string) | null
-        component: (null | string) | null
-        icon: (null | string) | null
+        /** 页面路径 */
+        path: string | null
+        /** 激活路径 */
+        activePath: string | null
+        /** 组件路径 */
+        component: string | null
+        /** 图标 */
+        icon: string | null
         /**
          * 是否外链，是(Y)/否(N)
          * @default "N"

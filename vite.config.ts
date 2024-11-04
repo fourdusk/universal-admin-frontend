@@ -45,6 +45,7 @@ const config = defineConfig({
     autoImport({
       dirs: [
         'src/global/config/_expose',
+        'src/global/constant/_expose',
         'src/global/locale/_expose',
         'src/global/store/_expose',
         'src/global/util/_expose'
@@ -59,7 +60,7 @@ const config = defineConfig({
     }),
     vueComponents({
       dirs: ['src/global/component'],
-      dts: 'src/global/type/component.d.ts',
+      dts: 'src/global/type/auto-component.d.ts',
       resolvers: [
         epResolver(),
         iconsResolver({

@@ -16,7 +16,8 @@ export class UserToRole<SecurityDataType = unknown> extends HttpClient<SecurityD
  * @request POST:/userToRole/create
  * @response `200` `{
     id: number,
-    remark: ((null | string) | null),
+  \** 备注 *\
+    remark: (string | null),
   \**
    * 排序
    * @default 0
@@ -29,12 +30,12 @@ export class UserToRole<SecurityDataType = unknown> extends HttpClient<SecurityD
     delFlag: ("Y" | "N"),
   \**
    * 创建时间
-   * @default 1730253856572
+   * @default 1730691246457
    *\
     createdAt: number,
   \**
    * 更新时间
-   * @default 1730253856572
+   * @default 1730691246457
    *\
     updatedAt: number,
   \** 创建人 *\
@@ -52,7 +53,8 @@ export class UserToRole<SecurityDataType = unknown> extends HttpClient<SecurityD
     this.request<
       {
         id: number
-        remark: (null | string) | null
+        /** 备注 */
+        remark: string | null
         /**
          * 排序
          * @default 0
@@ -65,12 +67,12 @@ export class UserToRole<SecurityDataType = unknown> extends HttpClient<SecurityD
         delFlag: 'Y' | 'N'
         /**
          * 创建时间
-         * @default 1730253856572
+         * @default 1730691246457
          */
         createdAt: number
         /**
          * 更新时间
-         * @default 1730253856572
+         * @default 1730691246457
          */
         updatedAt: number
         /** 创建人 */
@@ -100,7 +102,8 @@ export class UserToRole<SecurityDataType = unknown> extends HttpClient<SecurityD
  * @request POST:/userToRole/remove
  * @response `200` `{
     id: number,
-    remark: ((null | string) | null),
+  \** 备注 *\
+    remark: (string | null),
   \**
    * 排序
    * @default 0
@@ -113,12 +116,12 @@ export class UserToRole<SecurityDataType = unknown> extends HttpClient<SecurityD
     delFlag: ("Y" | "N"),
   \**
    * 创建时间
-   * @default 1730253856572
+   * @default 1730691246457
    *\
     createdAt: number,
   \**
    * 更新时间
-   * @default 1730253856572
+   * @default 1730691246457
    *\
     updatedAt: number,
   \** 创建人 *\
@@ -136,7 +139,8 @@ export class UserToRole<SecurityDataType = unknown> extends HttpClient<SecurityD
     this.request<
       {
         id: number
-        remark: (null | string) | null
+        /** 备注 */
+        remark: string | null
         /**
          * 排序
          * @default 0
@@ -149,12 +153,12 @@ export class UserToRole<SecurityDataType = unknown> extends HttpClient<SecurityD
         delFlag: 'Y' | 'N'
         /**
          * 创建时间
-         * @default 1730253856572
+         * @default 1730691246457
          */
         createdAt: number
         /**
          * 更新时间
-         * @default 1730253856572
+         * @default 1730691246457
          */
         updatedAt: number
         /** 创建人 */
@@ -185,7 +189,8 @@ export class UserToRole<SecurityDataType = unknown> extends HttpClient<SecurityD
  * @response `200` `{
     records: ({
     id: number,
-    remark: ((null | string) | null),
+  \** 备注 *\
+    remark: (string | null),
   \**
    * 排序
    * @default 0
@@ -198,12 +203,12 @@ export class UserToRole<SecurityDataType = unknown> extends HttpClient<SecurityD
     delFlag: ("Y" | "N"),
   \**
    * 创建时间
-   * @default 1730253856572
+   * @default 1730691246457
    *\
     createdAt: number,
   \**
    * 更新时间
-   * @default 1730253856572
+   * @default 1730691246457
    *\
     updatedAt: number,
   \** 创建人 *\
@@ -225,7 +230,8 @@ export class UserToRole<SecurityDataType = unknown> extends HttpClient<SecurityD
       {
         records: {
           id: number
-          remark: (null | string) | null
+          /** 备注 */
+          remark: string | null
           /**
            * 排序
            * @default 0
@@ -238,12 +244,12 @@ export class UserToRole<SecurityDataType = unknown> extends HttpClient<SecurityD
           delFlag: 'Y' | 'N'
           /**
            * 创建时间
-           * @default 1730253856572
+           * @default 1730691246457
            */
           createdAt: number
           /**
            * 更新时间
-           * @default 1730253856572
+           * @default 1730691246457
            */
           updatedAt: number
           /** 创建人 */
@@ -276,7 +282,8 @@ export class UserToRole<SecurityDataType = unknown> extends HttpClient<SecurityD
  * @response `200` `{
     records: ({
     id: number,
-    remark: ((null | string) | null),
+  \** 备注 *\
+    remark: (string | null),
   \**
    * 排序
    * @default 0
@@ -289,12 +296,12 @@ export class UserToRole<SecurityDataType = unknown> extends HttpClient<SecurityD
     delFlag: ("Y" | "N"),
   \**
    * 创建时间
-   * @default 1730253856572
+   * @default 1730691246457
    *\
     createdAt: number,
   \**
    * 更新时间
-   * @default 1730253856572
+   * @default 1730691246457
    *\
     updatedAt: number,
   \** 创建人 *\
@@ -316,7 +323,8 @@ export class UserToRole<SecurityDataType = unknown> extends HttpClient<SecurityD
       {
         records: {
           id: number
-          remark: (null | string) | null
+          /** 备注 */
+          remark: string | null
           /**
            * 排序
            * @default 0
@@ -329,12 +337,12 @@ export class UserToRole<SecurityDataType = unknown> extends HttpClient<SecurityD
           delFlag: 'Y' | 'N'
           /**
            * 创建时间
-           * @default 1730253856572
+           * @default 1730691246457
            */
           createdAt: number
           /**
            * 更新时间
-           * @default 1730253856572
+           * @default 1730691246457
            */
           updatedAt: number
           /** 创建人 */

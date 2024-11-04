@@ -15,7 +15,8 @@ export class RoleToResource<SecurityDataType = unknown> extends HttpClient<Secur
  * @request POST:/roleToResource/create
  * @response `200` `{
     id: number,
-    remark: ((null | string) | null),
+  \** 备注 *\
+    remark: (string | null),
   \**
    * 排序
    * @default 0
@@ -28,12 +29,12 @@ export class RoleToResource<SecurityDataType = unknown> extends HttpClient<Secur
     delFlag: ("Y" | "N"),
   \**
    * 创建时间
-   * @default 1730253856572
+   * @default 1730691246457
    *\
     createdAt: number,
   \**
    * 更新时间
-   * @default 1730253856572
+   * @default 1730691246457
    *\
     updatedAt: number,
   \** 创建人 *\
@@ -51,7 +52,8 @@ export class RoleToResource<SecurityDataType = unknown> extends HttpClient<Secur
     this.request<
       {
         id: number
-        remark: (null | string) | null
+        /** 备注 */
+        remark: string | null
         /**
          * 排序
          * @default 0
@@ -64,12 +66,12 @@ export class RoleToResource<SecurityDataType = unknown> extends HttpClient<Secur
         delFlag: 'Y' | 'N'
         /**
          * 创建时间
-         * @default 1730253856572
+         * @default 1730691246457
          */
         createdAt: number
         /**
          * 更新时间
-         * @default 1730253856572
+         * @default 1730691246457
          */
         updatedAt: number
         /** 创建人 */
@@ -99,7 +101,8 @@ export class RoleToResource<SecurityDataType = unknown> extends HttpClient<Secur
  * @request POST:/roleToResource/remove
  * @response `200` `{
     id: number,
-    remark: ((null | string) | null),
+  \** 备注 *\
+    remark: (string | null),
   \**
    * 排序
    * @default 0
@@ -112,12 +115,12 @@ export class RoleToResource<SecurityDataType = unknown> extends HttpClient<Secur
     delFlag: ("Y" | "N"),
   \**
    * 创建时间
-   * @default 1730253856572
+   * @default 1730691246457
    *\
     createdAt: number,
   \**
    * 更新时间
-   * @default 1730253856572
+   * @default 1730691246457
    *\
     updatedAt: number,
   \** 创建人 *\
@@ -135,7 +138,8 @@ export class RoleToResource<SecurityDataType = unknown> extends HttpClient<Secur
     this.request<
       {
         id: number
-        remark: (null | string) | null
+        /** 备注 */
+        remark: string | null
         /**
          * 排序
          * @default 0
@@ -148,12 +152,12 @@ export class RoleToResource<SecurityDataType = unknown> extends HttpClient<Secur
         delFlag: 'Y' | 'N'
         /**
          * 创建时间
-         * @default 1730253856572
+         * @default 1730691246457
          */
         createdAt: number
         /**
          * 更新时间
-         * @default 1730253856572
+         * @default 1730691246457
          */
         updatedAt: number
         /** 创建人 */
@@ -184,7 +188,8 @@ export class RoleToResource<SecurityDataType = unknown> extends HttpClient<Secur
  * @response `200` `{
     records: ({
     id: number,
-    remark: ((null | string) | null),
+  \** 备注 *\
+    remark: (string | null),
   \**
    * 排序
    * @default 0
@@ -197,12 +202,12 @@ export class RoleToResource<SecurityDataType = unknown> extends HttpClient<Secur
     delFlag: ("Y" | "N"),
   \**
    * 创建时间
-   * @default 1730253856572
+   * @default 1730691246457
    *\
     createdAt: number,
   \**
    * 更新时间
-   * @default 1730253856572
+   * @default 1730691246457
    *\
     updatedAt: number,
   \** 创建人 *\
@@ -224,7 +229,8 @@ export class RoleToResource<SecurityDataType = unknown> extends HttpClient<Secur
       {
         records: {
           id: number
-          remark: (null | string) | null
+          /** 备注 */
+          remark: string | null
           /**
            * 排序
            * @default 0
@@ -237,12 +243,12 @@ export class RoleToResource<SecurityDataType = unknown> extends HttpClient<Secur
           delFlag: 'Y' | 'N'
           /**
            * 创建时间
-           * @default 1730253856572
+           * @default 1730691246457
            */
           createdAt: number
           /**
            * 更新时间
-           * @default 1730253856572
+           * @default 1730691246457
            */
           updatedAt: number
           /** 创建人 */

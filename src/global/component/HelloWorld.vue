@@ -6,8 +6,6 @@ import { Role } from 'swagger/api/Role'
 import { User } from 'swagger/api/User'
 import { computed, ref } from 'vue'
 
-import { LangType } from '@/global/config'
-
 defineOptions({
   name: 'HelloWorld'
 })
@@ -60,6 +58,8 @@ const handleGetResourceList = async () => {
   resourceFindResult.value = result
 }
 
+const resourceTypeOptions = computed(() => gbConstant.getOptions('RESOURCE_TYPE'))
+
 const handleLangChange = (val: LangType) => {
   gbStore.useLocaleStore().setLang(val)
 }
@@ -96,5 +96,6 @@ const handleLangChange = (val: LangType) => {
     <div>获取用户列表结果：{{ userFindResult }}</div>
     <div>获取角色列表结果：{{ roleFindResult }}</div>
     <div>获取资源列表结果：{{ resourceFindResult }}</div>
+    <div>{{ resourceTypeOptions }}</div>
   </form>
 </template>

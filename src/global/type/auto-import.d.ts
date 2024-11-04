@@ -7,6 +7,7 @@
 export {}
 declare global {
   const gbConfig: (typeof import('../config/_expose/index'))['gbConfig']
+  const gbConstant: (typeof import('../constant/_expose/index'))['gbConstant']
   const gbLocale: (typeof import('../locale/_expose/index'))['gbLocale']
   const gbStore: (typeof import('../store/_expose/index'))['gbStore']
   const gbUtil: (typeof import('../util/_expose/index'))['gbUtil']

@@ -1,6 +1,7 @@
 {
   "globals": {
     "gbConfig": true,
+    "gbConstant": true,
     "gbLocale": true,
     "gbStore": true,
     "gbUtil": true

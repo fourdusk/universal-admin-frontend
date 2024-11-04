@@ -7,7 +7,8 @@ export interface PostAuthSignInPayload {
 
 export interface PostRoleCreatePayload {
   id?: number
-  remark?: (null | string) | null
+  /** 备注 */
+  remark?: string | null
   /**
    * 排序
    * @default 0
@@ -20,12 +21,12 @@ export interface PostRoleCreatePayload {
   delFlag?: 'Y' | 'N'
   /**
    * 创建时间
-   * @default 1730253856572
+   * @default 1730691246457
    */
   createdAt?: number
   /**
    * 更新时间
-   * @default 1730253856572
+   * @default 1730691246457
    */
   updatedAt?: number
   /** 创建人 */
@@ -45,7 +46,8 @@ export interface PostRoleCreatePayload {
 
 export interface PostRoleUpdatePayload {
   id: number
-  remark: (null | string) | null
+  /** 备注 */
+  remark: string | null
   /**
    * 排序
    * @default 0
@@ -58,12 +60,12 @@ export interface PostRoleUpdatePayload {
   delFlag: 'Y' | 'N'
   /**
    * 创建时间
-   * @default 1730253856572
+   * @default 1730691246457
    */
   createdAt: number
   /**
    * 更新时间
-   * @default 1730253856572
+   * @default 1730691246457
    */
   updatedAt: number
   /** 创建人 */
@@ -92,7 +94,8 @@ export interface PostRoleGetPayload {
 }
 
 export interface PostRoleFindPayload {
-  remark?: (null | string) | null
+  /** 备注 */
+  remark?: string | null
   /**
    * 排序
    * @default 0
@@ -193,7 +196,8 @@ export interface PostRoleFindResourcesPayload {
 
 export interface PostResourceCreatePayload {
   id?: number
-  remark?: (null | string) | null
+  /** 备注 */
+  remark?: string | null
   /**
    * 排序
    * @default 0
@@ -206,12 +210,12 @@ export interface PostResourceCreatePayload {
   delFlag?: 'Y' | 'N'
   /**
    * 创建时间
-   * @default 1730253856572
+   * @default 1730691246457
    */
   createdAt?: number
   /**
    * 更新时间
-   * @default 1730253856572
+   * @default 1730691246457
    */
   updatedAt?: number
   /** 创建人 */
@@ -239,10 +243,14 @@ export interface PostResourceCreatePayload {
    * @default "Menu"
    */
   resourceType: 'Menu' | 'Pgae' | 'Element'
-  path?: (null | string) | null
-  activePath?: (null | string) | null
-  component?: (null | string) | null
-  icon?: (null | string) | null
+  /** 页面路径 */
+  path?: string | null
+  /** 激活路径 */
+  activePath?: string | null
+  /** 组件路径 */
+  component?: string | null
+  /** 图标 */
+  icon?: string | null
   /**
    * 是否外链，是(Y)/否(N)
    * @default "N"
@@ -267,7 +275,8 @@ export interface PostResourceCreatePayload {
 
 export interface PostResourceUpdatePayload {
   id: number
-  remark: (null | string) | null
+  /** 备注 */
+  remark: string | null
   /**
    * 排序
    * @default 0
@@ -280,12 +289,12 @@ export interface PostResourceUpdatePayload {
   delFlag: 'Y' | 'N'
   /**
    * 创建时间
-   * @default 1730253856572
+   * @default 1730691246457
    */
   createdAt: number
   /**
    * 更新时间
-   * @default 1730253856572
+   * @default 1730691246457
    */
   updatedAt: number
   /** 创建人 */
@@ -313,10 +322,14 @@ export interface PostResourceUpdatePayload {
    * @default "Menu"
    */
   resourceType: 'Menu' | 'Pgae' | 'Element'
-  path: (null | string) | null
-  activePath: (null | string) | null
-  component: (null | string) | null
-  icon: (null | string) | null
+  /** 页面路径 */
+  path: string | null
+  /** 激活路径 */
+  activePath: string | null
+  /** 组件路径 */
+  component: string | null
+  /** 图标 */
+  icon: string | null
   /**
    * 是否外链，是(Y)/否(N)
    * @default "N"
@@ -351,7 +364,8 @@ export interface PostResourceGetPayload {
 
 export interface PostResourceFindPayload {
   id?: number
-  remark?: (null | string) | null
+  /** 备注 */
+  remark?: string | null
   /**
    * 排序
    * @default 0
@@ -387,10 +401,14 @@ export interface PostResourceFindPayload {
    * @default "Menu"
    */
   resourceType?: 'Menu' | 'Pgae' | 'Element'
-  path?: (null | string) | null
-  activePath?: (null | string) | null
-  component?: (null | string) | null
-  icon?: (null | string) | null
+  /** 页面路径 */
+  path?: string | null
+  /** 激活路径 */
+  activePath?: string | null
+  /** 组件路径 */
+  component?: string | null
+  /** 图标 */
+  icon?: string | null
   /**
    * 是否外链，是(Y)/否(N)
    * @default "N"
@@ -435,7 +453,8 @@ export interface PostResourceFindPayload {
 
 export interface PostResourceFindTreePayload {
   id?: number
-  remark?: (null | string) | null
+  /** 备注 */
+  remark?: string | null
   /**
    * 排序
    * @default 0
@@ -471,10 +490,14 @@ export interface PostResourceFindTreePayload {
    * @default "Menu"
    */
   resourceType?: 'Menu' | 'Pgae' | 'Element'
-  path?: (null | string) | null
-  activePath?: (null | string) | null
-  component?: (null | string) | null
-  icon?: (null | string) | null
+  /** 页面路径 */
+  path?: string | null
+  /** 激活路径 */
+  activePath?: string | null
+  /** 组件路径 */
+  component?: string | null
+  /** 图标 */
+  icon?: string | null
   /**
    * 是否外链，是(Y)/否(N)
    * @default "N"
@@ -541,7 +564,8 @@ export interface PostResourceGetRolesPayload {
 
 export interface PostUserToRoleCreatePayload {
   id?: number
-  remark?: (null | string) | null
+  /** 备注 */
+  remark?: string | null
   /**
    * 排序
    * @default 0
@@ -554,12 +578,12 @@ export interface PostUserToRoleCreatePayload {
   delFlag?: 'Y' | 'N'
   /**
    * 创建时间
-   * @default 1730253856572
+   * @default 1730691246457
    */
   createdAt?: number
   /**
    * 更新时间
-   * @default 1730253856572
+   * @default 1730691246457
    */
   updatedAt?: number
   /** 创建人 */
@@ -581,7 +605,8 @@ export interface PostUserToRoleRemovePayload {
 
 export interface PostUserToRoleFindPayload {
   id?: number
-  remark?: (null | string) | null
+  /** 备注 */
+  remark?: string | null
   /**
    * 排序
    * @default 0
@@ -622,7 +647,8 @@ export interface PostUserToRoleFindPayload {
 
 export interface PostUserToRoleFindAllPayload {
   id?: number
-  remark?: (null | string) | null
+  /** 备注 */
+  remark?: string | null
   /**
    * 排序
    * @default 0
@@ -653,7 +679,8 @@ export interface PostUserToRoleFindAllPayload {
 
 export interface PostRoleToResourceCreatePayload {
   id?: number
-  remark?: (null | string) | null
+  /** 备注 */
+  remark?: string | null
   /**
    * 排序
    * @default 0
@@ -666,12 +693,12 @@ export interface PostRoleToResourceCreatePayload {
   delFlag?: 'Y' | 'N'
   /**
    * 创建时间
-   * @default 1730253856572
+   * @default 1730691246457
    */
   createdAt?: number
   /**
    * 更新时间
-   * @default 1730253856572
+   * @default 1730691246457
    */
   updatedAt?: number
   /** 创建人 */
@@ -693,7 +720,8 @@ export interface PostRoleToResourceRemovePayload {
 
 export interface PostRoleToResourceFindPayload {
   id?: number
-  remark?: (null | string) | null
+  /** 备注 */
+  remark?: string | null
   /**
    * 排序
    * @default 0
@@ -736,7 +764,8 @@ export interface PostRoleToResourceFindPayload {
 
 export interface PostUserCreatePayload {
   id?: number
-  remark?: (null | string) | null
+  /** 备注 */
+  remark?: string | null
   /**
    * 排序
    * @default 0
@@ -749,12 +778,12 @@ export interface PostUserCreatePayload {
   delFlag?: 'Y' | 'N'
   /**
    * 创建时间
-   * @default 1730253856572
+   * @default 1730691246457
    */
   createdAt?: number
   /**
    * 更新时间
-   * @default 1730253856572
+   * @default 1730691246457
    */
   updatedAt?: number
   /** 创建人 */
@@ -781,7 +810,8 @@ export interface PostUserCreatePayload {
 
 export interface PostUserUpdatePayload {
   id: number
-  remark: (null | string) | null
+  /** 备注 */
+  remark: string | null
   /**
    * 排序
    * @default 0
@@ -794,12 +824,12 @@ export interface PostUserUpdatePayload {
   delFlag: 'Y' | 'N'
   /**
    * 创建时间
-   * @default 1730253856572
+   * @default 1730691246457
    */
   createdAt: number
   /**
    * 更新时间
-   * @default 1730253856572
+   * @default 1730691246457
    */
   updatedAt: number
   /** 创建人 */
@@ -835,7 +865,8 @@ export interface PostUserGetPayload {
 }
 
 export interface PostUserFindPayload {
-  remark?: (null | string) | null
+  /** 备注 */
+  remark?: string | null
   /**
    * 排序
    * @default 0
