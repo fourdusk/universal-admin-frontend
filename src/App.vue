@@ -5,5 +5,5 @@ defineOptions({
 </script>
 
 <template>
-  <HelloWorld />
+  <RouterView />
 </template>

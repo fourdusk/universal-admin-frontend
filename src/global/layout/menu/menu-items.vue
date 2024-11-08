@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 
-import { Resource } from './type'
+import { Resource } from '@/global/constant/resource/index'
 
 type Props = {
   resources: Resource[]

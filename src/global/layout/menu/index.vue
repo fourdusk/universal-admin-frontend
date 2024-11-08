@@ -1,6 +1,7 @@
 <script setup lang="ts">
+import { Resource } from '@/global/constant/resource/index'
+
 import MenuItems from './menu-items.vue'
-import { Resource } from './type'
 
 type Props = {
   resources: Resource[]

@@ -6,8 +6,8 @@ import { Role } from 'swagger/api/Role'
 import { User } from 'swagger/api/User'
 import { computed, ref } from 'vue'
 
+import { Resource as ResourceItem } from '@/global/constant/resource/index'
 import LayoutMenu from '@/global/layout/menu/index.vue'
-import { Resource as ResourceType } from '@/global/layout/menu/type'
 
 defineOptions({
   name: 'HelloWorld'
@@ -22,7 +22,7 @@ const signInResult = ref<{
   username: string
   accessToken: string
   refreshToken: string
-  resourceTree: ResourceType[]
+  resourceTree: ResourceItem[]
 }>({
   username: '',
   accessToken: '',

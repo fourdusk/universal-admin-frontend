@@ -30,7 +30,7 @@ const config = defineConfig({
   globals: {
     LangType: 'readonly',
     NullOrUndefined: 'readonly',
-    BoolType: 'readonly'
+    WhetherType: 'readonly'
   },
   rules: {
     // eslint
