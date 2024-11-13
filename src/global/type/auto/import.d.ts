@@ -19,11 +19,11 @@ declare global {
   const defineComponent: (typeof import('vue'))['defineComponent']
   const defineStore: (typeof import('pinia'))['defineStore']
   const effectScope: (typeof import('vue'))['effectScope']
-  const gbConfig: (typeof import('../config/_expose/index'))['gbConfig']
-  const gbConstant: (typeof import('../constant/_expose/index'))['gbConstant']
-  const gbLocale: (typeof import('../locale/_expose/index'))['gbLocale']
-  const gbStore: (typeof import('../store/_expose/index'))['gbStore']
-  const gbUtil: (typeof import('../util/_expose/index'))['gbUtil']
+  const gbConfig: (typeof import('../../config/_expose/index'))['gbConfig']
+  const gbConstant: (typeof import('../../constant/_expose/index'))['gbConstant']
+  const gbLocale: (typeof import('../../locale/_expose/index'))['gbLocale']
+  const gbStore: (typeof import('../../store/_expose/index'))['gbStore']
+  const gbUtil: (typeof import('../../util/_expose/index'))['gbUtil']
   const getActivePinia: (typeof import('pinia'))['getActivePinia']
   const getCurrentInstance: (typeof import('vue'))['getCurrentInstance']
   const getCurrentScope: (typeof import('vue'))['getCurrentScope']
@@ -115,6 +115,9 @@ declare global {
   // @ts-ignore
   export type { FormInstance, FormItemRule, FormRules } from 'element-plus'
   import('element-plus')
+  // @ts-ignore
+  export type { LangType, NullOrUndefined, WhetherType } from '../_expose/index.d'
+  import('../_expose/index.d')
 }
 // for vue template auto import
 import { UnwrapRef } from 'vue'
@@ -134,11 +137,11 @@ declare module 'vue' {
     readonly defineComponent: UnwrapRef<(typeof import('vue'))['defineComponent']>
     readonly defineStore: UnwrapRef<(typeof import('pinia'))['defineStore']>
     readonly effectScope: UnwrapRef<(typeof import('vue'))['effectScope']>
-    readonly gbConfig: UnwrapRef<(typeof import('../config/_expose/index'))['gbConfig']>
-    readonly gbConstant: UnwrapRef<(typeof import('../constant/_expose/index'))['gbConstant']>
-    readonly gbLocale: UnwrapRef<(typeof import('../locale/_expose/index'))['gbLocale']>
-    readonly gbStore: UnwrapRef<(typeof import('../store/_expose/index'))['gbStore']>
-    readonly gbUtil: UnwrapRef<(typeof import('../util/_expose/index'))['gbUtil']>
+    readonly gbConfig: UnwrapRef<(typeof import('../../config/_expose/index'))['gbConfig']>
+    readonly gbConstant: UnwrapRef<(typeof import('../../constant/_expose/index'))['gbConstant']>
+    readonly gbLocale: UnwrapRef<(typeof import('../../locale/_expose/index'))['gbLocale']>
+    readonly gbStore: UnwrapRef<(typeof import('../../store/_expose/index'))['gbStore']>
+    readonly gbUtil: UnwrapRef<(typeof import('../../util/_expose/index'))['gbUtil']>
     readonly getActivePinia: UnwrapRef<(typeof import('pinia'))['getActivePinia']>
     readonly getCurrentInstance: UnwrapRef<(typeof import('vue'))['getCurrentInstance']>
     readonly getCurrentScope: UnwrapRef<(typeof import('vue'))['getCurrentScope']>

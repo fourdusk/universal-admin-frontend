@@ -80,7 +80,7 @@ declare module 'vue' {
     ElScrollbar: typeof import('element-plus')['ElScrollbar']
     ElSegmented: typeof import('element-plus')['ElSegmented']
     ElSelect: typeof import('element-plus')['ElSelect']
-    ElSelectV2: typeof import('element-plus')['ElSelectV2']
+    ElSelectV2: typeof import('element-plus/es')['ElSelectV2']
     ElSkeleton: typeof import('element-plus')['ElSkeleton']
     ElSkeletonItem: typeof import('element-plus')['ElSkeletonItem']
     ElSlider: typeof import('element-plus')['ElSlider']
@@ -109,7 +109,7 @@ declare module 'vue' {
     ElTreeV2: typeof import('element-plus')['ElTreeV2']
     ElUpload: typeof import('element-plus')['ElUpload']
     ElWatermark: typeof import('element-plus')['ElWatermark']
-    HelloWorld: typeof import('./../component/HelloWorld.vue')['default']
+    HelloWorld: typeof import('./../../component/HelloWorld.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
   }

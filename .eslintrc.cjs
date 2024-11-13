@@ -27,11 +27,6 @@ const config = defineConfig({
       jsx: true
     }
   },
-  globals: {
-    LangType: 'readonly',
-    NullOrUndefined: 'readonly',
-    WhetherType: 'readonly'
-  },
   rules: {
     // eslint
     yoda: 'off',

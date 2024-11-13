@@ -59,16 +59,26 @@ const config = defineConfig({
           imports: ['RouteRecordRaw'],
           type: true
         },
-        { from: 'element-plus', imports: ['FormInstance', 'FormItemRule', 'FormRules'], type: true }
+        {
+          from: 'element-plus',
+          imports: ['FormInstance', 'FormItemRule', 'FormRules'],
+          type: true
+        },
+        {
+          from: pathResolve('src/global/type/_expose/index.d.ts'),
+          imports: ['LangType', 'NullOrUndefined', 'WhetherType'],
+          type: true
+        }
       ],
       dirs: [
         'src/global/config/_expose',
         'src/global/constant/_expose',
         'src/global/locale/_expose',
         'src/global/store/_expose',
-        'src/global/util/_expose'
+        'src/global/util/_expose',
+        'src/global/type/_expose'
       ],
-      dts: 'src/global/type/auto-import.d.ts',
+      dts: 'src/global/type/auto/import.d.ts',
       eslintrc: {
         enabled: true,
         filepath: './.eslintrc-auto-import.json',
@@ -78,7 +88,7 @@ const config = defineConfig({
     }),
     vueComponents({
       dirs: ['src/global/component'],
-      dts: 'src/global/type/auto-component.d.ts',
+      dts: 'src/global/type/auto/component.d.ts',
       resolvers: [
         epResolver(),
         iconsResolver({

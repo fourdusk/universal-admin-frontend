@@ -16,5 +16,3 @@ export const supportedLangs = supportedLangOptions.map(o => o.value)
 export const localeConfig = {
   fallbackLocale: 'en'
 } as const
-
-export type LangType = (typeof supportedLangOptions)[number]['value']
