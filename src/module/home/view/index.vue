@@ -1,7 +1,7 @@
 <script setup lang="ts">
-const name = gbConstant.getValue('HOME_ROUTER', 'name')
+const username = gbStore.useUserStore().getInfo()?.username
 </script>
 
 <template>
-  <div>{{ name }}</div>
+  <div>Hello, {{ username }}</div>
 </template>

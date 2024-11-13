@@ -7,6 +7,8 @@ export default {
       operate: 'Operation',
       backToHomePage: 'Back to home page',
       refresh: 'Refresh',
+      query: 'Query',
+      reset: 'Reset',
       maximize: 'Maximize',
       closeCurrent: 'Close Current',
       closeOther: 'Close Other',

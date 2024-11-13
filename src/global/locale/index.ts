@@ -1,5 +1,3 @@
-import { createI18n } from 'vue-i18n'
-
 export const i18n = createI18n({
   fallbackLocale: gbConfig.localeConfig.fallbackLocale,
   legacy: false,
@@ -8,3 +6,7 @@ export const i18n = createI18n({
   sync: true,
   globalInjection: true
 })
+
+// Type TArgs = Parameters<typeof i18n.global.t>
+
+export const { t } = i18n.global

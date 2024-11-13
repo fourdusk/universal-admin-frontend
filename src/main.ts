@@ -1,7 +1,5 @@
 import '@/global/style/index.css'
 
-import { createApp } from 'vue'
-
 import App from '@/App.vue'
 import { i18n } from '@/global/locale/index'
 import router from '@/global/router/index'

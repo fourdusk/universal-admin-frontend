@@ -7,6 +7,8 @@ export default {
       operate: '操作',
       backToHomePage: '返回首页',
       refresh: '刷新',
+      query: '查询',
+      reset: '重置',
       maximize: '最大化',
       closeCurrent: '关闭当前',
       closeOther: '关闭其他',

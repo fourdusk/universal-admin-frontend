@@ -4,7 +4,6 @@ import { Auth } from 'swagger/api/Auth'
 import { Resource } from 'swagger/api/Resource'
 import { Role } from 'swagger/api/Role'
 import { User } from 'swagger/api/User'
-import { computed, ref } from 'vue'
 
 import { Resource as ResourceItem } from '@/global/constant/resource/index'
 import LayoutMenu from '@/global/layout/menu/index.vue'

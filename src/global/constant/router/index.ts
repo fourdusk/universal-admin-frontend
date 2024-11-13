@@ -13,14 +13,9 @@ export const PAGE_NOT_MATCH_ROUTER = {
   path: '/:pathMatch(.*)*'
 }
 
-export const NO_RESOURCE_PERMISSION_ROUTER = {
-  name: 'ErrorNoResourcePermission',
-  path: '/error/noResourcePermission'
-}
-
 export const PAGE_NOT_FOUND_ROUTER = {
   name: 'ErrorPageNotFound',
-  path: '/error/pageNotFound'
+  path: '/error/page-not-found'
 }
 
 export const LAYOUT_ROUTER = {

@@ -8,7 +8,7 @@ type Props = {
 }
 
 defineOptions({
-  name: 'MenuItems'
+  name: 'LayoutMenu'
 })
 
 defineProps<Props>()

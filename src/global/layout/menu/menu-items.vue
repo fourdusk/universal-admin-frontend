@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { computed } from 'vue'
-
 import { Resource } from '@/global/constant/resource/index'
 
 type Props = {
@@ -8,18 +6,14 @@ type Props = {
 }
 
 defineOptions({
-  name: 'MenuItems'
+  name: 'LayoutMenuItems'
 })
 
 defineProps<Props>()
 
 const getResourceName = computed(() => (resource: Resource) => {
-  const nameMap = {
-    en: 'resourceNameEn',
-    'zh-cn': 'resourceNameZhCn'
-  } as const
   const lang = gbLocale.i18n.global.locale.value as LangType
-  return resource[nameMap[lang]]
+  return resource[gbConstant.origin.LOCALE_RESOURCE_NAME_MAP[lang]]
 })
 </script>
 
@@ -35,7 +29,7 @@ const getResourceName = computed(() => (resource: Resource) => {
       </template>
       <MenuItems :resources="resource.children" />
     </ElSubMenu>
-    <ElMenuItem v-else :key="resource.resourceCode">
+    <ElMenuItem v-else :key="`${resource.resourceCode}`">
       {{ getResourceName(resource) }}
     </ElMenuItem>
   </template>

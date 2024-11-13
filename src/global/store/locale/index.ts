@@ -1,5 +1,3 @@
-import { defineStore } from 'pinia'
-
 type State = {
   lang: string | null
   loadedLangs: LangType[]

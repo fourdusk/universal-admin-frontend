@@ -1,5 +1,3 @@
-import { defineStore } from 'pinia'
-
 import { WHETHER_TYPE } from '@/global/constant/common/index'
 import { type Resource, RESOURCE_TYPE } from '@/global/constant/resource/index'
 

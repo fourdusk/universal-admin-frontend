@@ -43,6 +43,24 @@ const config = defineConfig({
       }
     }),
     autoImport({
+      vueTemplate: true,
+      viteOptimizeDeps: true,
+      imports: [
+        'vue',
+        'vue-router',
+        'vue-i18n',
+        'pinia',
+        {
+          'vue-router': ['createRouter', 'createWebHistory', 'useRouter'],
+          'vue-i18n': ['createI18n']
+        },
+        {
+          from: 'vue-router',
+          imports: ['RouteRecordRaw'],
+          type: true
+        },
+        { from: 'element-plus', imports: ['FormInstance', 'FormItemRule', 'FormRules'], type: true }
+      ],
       dirs: [
         'src/global/config/_expose',
         'src/global/constant/_expose',

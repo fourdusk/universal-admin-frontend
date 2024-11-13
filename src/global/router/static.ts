@@ -1,5 +1,3 @@
-import { RouteRecordRaw } from 'vue-router'
-
 import { WHETHER_TYPE } from '@/global/constant/common/index'
 import { RESOURCE_TYPE } from '@/global/constant/resource/index'
 import {
@@ -17,6 +15,22 @@ export const staticRouter: RouteRecordRaw[] = [
   {
     path: ROOT_ROUTER.path,
     redirect: HOME_ROUTER.path
+  },
+  {
+    path: HOME_ROUTER.path,
+    name: HOME_ROUTER.name,
+    component: () => import('@/module/home/view/index.vue'),
+    meta: {
+      resourceType: RESOURCE_TYPE.page.value,
+      resourceNameEn: 'Home',
+      resourceNameZhCn: '首页',
+      icon: null,
+      status: WHETHER_TYPE.yes,
+      isAffix: WHETHER_TYPE.yes,
+      isCache: WHETHER_TYPE.yes,
+      isHide: WHETHER_TYPE.no,
+      isLink: WHETHER_TYPE.no
+    } as RouterMeta
   },
   {
     path: LAYOUT_ROUTER.path,
@@ -71,5 +85,5 @@ export const staticRouter: RouteRecordRaw[] = [
 export const pageNotMatchRouter: RouteRecordRaw = {
   path: PAGE_NOT_MATCH_ROUTER.path,
   name: PAGE_NOT_MATCH_ROUTER.name,
-  redirect: { path: PAGE_NOT_MATCH_ROUTER.path }
+  redirect: { path: PAGE_NOT_FOUND_ROUTER.path }
 }

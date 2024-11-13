@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const name = gbConstant.getValue('PAGE_NOT_FOUND_ROUTER', 'name')
+const { name } = gbConstant.origin.PAGE_NOT_FOUND_ROUTER
 </script>
 
 <template>
