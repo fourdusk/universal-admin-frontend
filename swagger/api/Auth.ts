@@ -10,8 +10,6 @@ export class Auth<SecurityDataType = unknown> extends HttpClient<SecurityDataTyp
  * @summary 用户登录
  * @request POST:/auth/signIn
  * @response `200` `{
-  \** 用户名 *\
-    username: string,
     accessToken: string,
     refreshToken: string,
     resourceTree: ({
@@ -30,12 +28,12 @@ export class Auth<SecurityDataType = unknown> extends HttpClient<SecurityDataTyp
     delFlag: ("Y" | "N"),
   \**
    * 创建时间
-   * @default 1730691246457
+   * @default 1731575784888
    *\
     createdAt: number,
   \**
    * 更新时间
-   * @default 1730691246457
+   * @default 1731575784888
    *\
     updatedAt: number,
   \** 创建人 *\
@@ -94,14 +92,17 @@ export class Auth<SecurityDataType = unknown> extends HttpClient<SecurityDataTyp
     children: (any)[],
 
 })[],
+    userInfo: {
+  \** 用户名 *\
+    username: string,
+
+},
 
 }`
  */
   postAuthSignIn = (data: PostAuthSignInPayload, params: RequestParams = {}) =>
     this.request<
       {
-        /** 用户名 */
-        username: string
         accessToken: string
         refreshToken: string
         resourceTree: {
@@ -120,12 +121,12 @@ export class Auth<SecurityDataType = unknown> extends HttpClient<SecurityDataTyp
           delFlag: 'Y' | 'N'
           /**
            * 创建时间
-           * @default 1730691246457
+           * @default 1731575784888
            */
           createdAt: number
           /**
            * 更新时间
-           * @default 1730691246457
+           * @default 1731575784888
            */
           updatedAt: number
           /** 创建人 */
@@ -183,6 +184,10 @@ export class Auth<SecurityDataType = unknown> extends HttpClient<SecurityDataTyp
           isHide: 'Y' | 'N'
           children: any[]
         }[]
+        userInfo: {
+          /** 用户名 */
+          username: string
+        }
       },
       any
     >({

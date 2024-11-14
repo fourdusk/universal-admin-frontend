@@ -29,7 +29,7 @@ const getResourceName = computed(() => (resource: Resource) => {
       </template>
       <MenuItems :resources="resource.children" />
     </ElSubMenu>
-    <ElMenuItem v-else :key="`${resource.resourceCode}`">
+    <ElMenuItem v-else :key="`${resource.resourceCode}`" :index="resource.path">
       {{ getResourceName(resource) }}
     </ElMenuItem>
   </template>

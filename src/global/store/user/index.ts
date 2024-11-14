@@ -6,8 +6,6 @@ type State = {
   refreshToken: string | null
   info: {
     username: string
-    isAdmin: WhetherType
-    status: WhetherType
   } | null
   resourceTree: Resource[]
 }
@@ -17,16 +15,18 @@ export const useUserStore = defineStore('user', {
     accessToken: null,
     refreshToken: null,
     info: {
-      username: '',
-      isAdmin: WHETHER_TYPE.no,
-      status: WHETHER_TYPE.no
+      username: ''
     },
     resourceTree: []
   }),
   actions: {
-    setAccessToken(val: string) {
+    setAccessToken(val: string | null) {
       this.accessToken = val
-      gbUtil.localStorager.setItem('accessToken', val)
+      if (gbUtil.isEmpty(val)) {
+        gbUtil.localStorager.removeItem('accessToken')
+      } else {
+        gbUtil.localStorager.setItem('accessToken', val)
+      }
     },
     getAccessToken() {
       const token = gbUtil.localStorager.getItem('accessToken')
@@ -37,8 +37,8 @@ export const useUserStore = defineStore('user', {
       return this.accessToken
     },
     removeAccessToken() {
-      gbUtil.localStorager.removeItem('accessToken')
       this.accessToken = null
+      gbUtil.localStorager.removeItem('accessToken')
     },
     setInfo(val: State['info']) {
       this.info = val
@@ -53,6 +53,7 @@ export const useUserStore = defineStore('user', {
       return this.info
     },
     removeInfo() {
+      this.info = null
       gbUtil.localStorager.removeItem('userInfo')
     },
     setResourceTree(val: State['resourceTree']) {
@@ -96,8 +97,8 @@ export const useUserStore = defineStore('user', {
       return resources.filter(o => o.resourceType === RESOURCE_TYPE.element.value)
     },
     removeResources() {
-      gbUtil.localStorager.removeItem('resourceTree')
       this.resourceTree = []
+      gbUtil.localStorager.removeItem('resourceTree')
     }
   }
 })

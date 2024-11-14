@@ -5,7 +5,8 @@ export default {
       password: '密码'
     },
     action: {
-      signIn: '登录'
+      signIn: '登录',
+      signOut: '登出'
     }
   }
 }

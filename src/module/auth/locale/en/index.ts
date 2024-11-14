@@ -5,7 +5,8 @@ export default {
       password: 'Password'
     },
     action: {
-      signIn: 'Sign In'
+      signIn: 'Sign In',
+      signOut: 'Sign Out'
     }
   }
 }

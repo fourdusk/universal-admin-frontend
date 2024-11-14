@@ -34,12 +34,12 @@ export class Role<SecurityDataType = unknown> extends HttpClient<SecurityDataTyp
     delFlag: ("Y" | "N"),
   \**
    * 创建时间
-   * @default 1730691246457
+   * @default 1731575784888
    *\
     createdAt: number,
   \**
    * 更新时间
-   * @default 1730691246457
+   * @default 1731575784888
    *\
     updatedAt: number,
   \** 创建人 *\
@@ -76,12 +76,12 @@ export class Role<SecurityDataType = unknown> extends HttpClient<SecurityDataTyp
         delFlag: 'Y' | 'N'
         /**
          * 创建时间
-         * @default 1730691246457
+         * @default 1731575784888
          */
         createdAt: number
         /**
          * 更新时间
-         * @default 1730691246457
+         * @default 1731575784888
          */
         updatedAt: number
         /** 创建人 */
@@ -130,12 +130,12 @@ export class Role<SecurityDataType = unknown> extends HttpClient<SecurityDataTyp
     delFlag: ("Y" | "N"),
   \**
    * 创建时间
-   * @default 1730691246457
+   * @default 1731575784888
    *\
     createdAt: number,
   \**
    * 更新时间
-   * @default 1730691246457
+   * @default 1731575784888
    *\
     updatedAt: number,
   \** 创建人 *\
@@ -172,12 +172,12 @@ export class Role<SecurityDataType = unknown> extends HttpClient<SecurityDataTyp
         delFlag: 'Y' | 'N'
         /**
          * 创建时间
-         * @default 1730691246457
+         * @default 1731575784888
          */
         createdAt: number
         /**
          * 更新时间
-         * @default 1730691246457
+         * @default 1731575784888
          */
         updatedAt: number
         /** 创建人 */
@@ -226,12 +226,12 @@ export class Role<SecurityDataType = unknown> extends HttpClient<SecurityDataTyp
     delFlag: ("Y" | "N"),
   \**
    * 创建时间
-   * @default 1730691246457
+   * @default 1731575784888
    *\
     createdAt: number,
   \**
    * 更新时间
-   * @default 1730691246457
+   * @default 1731575784888
    *\
     updatedAt: number,
   \** 创建人 *\
@@ -268,12 +268,12 @@ export class Role<SecurityDataType = unknown> extends HttpClient<SecurityDataTyp
         delFlag: 'Y' | 'N'
         /**
          * 创建时间
-         * @default 1730691246457
+         * @default 1731575784888
          */
         createdAt: number
         /**
          * 更新时间
-         * @default 1730691246457
+         * @default 1731575784888
          */
         updatedAt: number
         /** 创建人 */
@@ -322,12 +322,12 @@ export class Role<SecurityDataType = unknown> extends HttpClient<SecurityDataTyp
     delFlag: ("Y" | "N"),
   \**
    * 创建时间
-   * @default 1730691246457
+   * @default 1731575784888
    *\
     createdAt: number,
   \**
    * 更新时间
-   * @default 1730691246457
+   * @default 1731575784888
    *\
     updatedAt: number,
   \** 创建人 *\
@@ -364,12 +364,12 @@ export class Role<SecurityDataType = unknown> extends HttpClient<SecurityDataTyp
         delFlag: 'Y' | 'N'
         /**
          * 创建时间
-         * @default 1730691246457
+         * @default 1731575784888
          */
         createdAt: number
         /**
          * 更新时间
-         * @default 1730691246457
+         * @default 1731575784888
          */
         updatedAt: number
         /** 创建人 */
@@ -419,12 +419,12 @@ export class Role<SecurityDataType = unknown> extends HttpClient<SecurityDataTyp
     delFlag: ("Y" | "N"),
   \**
    * 创建时间
-   * @default 1730691246457
+   * @default 1731575784888
    *\
     createdAt: number,
   \**
    * 更新时间
-   * @default 1730691246457
+   * @default 1731575784888
    *\
     updatedAt: number,
   \** 创建人 *\
@@ -465,12 +465,12 @@ export class Role<SecurityDataType = unknown> extends HttpClient<SecurityDataTyp
           delFlag: 'Y' | 'N'
           /**
            * 创建时间
-           * @default 1730691246457
+           * @default 1731575784888
            */
           createdAt: number
           /**
            * 更新时间
-           * @default 1730691246457
+           * @default 1731575784888
            */
           updatedAt: number
           /** 创建人 */
@@ -522,12 +522,12 @@ export class Role<SecurityDataType = unknown> extends HttpClient<SecurityDataTyp
     delFlag: ("Y" | "N"),
   \**
    * 创建时间
-   * @default 1730691246457
+   * @default 1731575784888
    *\
     createdAt: number,
   \**
    * 更新时间
-   * @default 1730691246457
+   * @default 1731575784888
    *\
     updatedAt: number,
   \** 创建人 *\
@@ -573,12 +573,12 @@ export class Role<SecurityDataType = unknown> extends HttpClient<SecurityDataTyp
           delFlag: 'Y' | 'N'
           /**
            * 创建时间
-           * @default 1730691246457
+           * @default 1731575784888
            */
           createdAt: number
           /**
            * 更新时间
-           * @default 1730691246457
+           * @default 1731575784888
            */
           updatedAt: number
           /** 创建人 */
@@ -635,12 +635,12 @@ export class Role<SecurityDataType = unknown> extends HttpClient<SecurityDataTyp
     delFlag: ("Y" | "N"),
   \**
    * 创建时间
-   * @default 1730691246457
+   * @default 1731575784888
    *\
     createdAt: number,
   \**
    * 更新时间
-   * @default 1730691246457
+   * @default 1731575784888
    *\
     updatedAt: number,
   \** 创建人 *\
@@ -721,12 +721,12 @@ export class Role<SecurityDataType = unknown> extends HttpClient<SecurityDataTyp
           delFlag: 'Y' | 'N'
           /**
            * 创建时间
-           * @default 1730691246457
+           * @default 1731575784888
            */
           createdAt: number
           /**
            * 更新时间
-           * @default 1730691246457
+           * @default 1731575784888
            */
           updatedAt: number
           /** 创建人 */
@@ -818,12 +818,12 @@ export class Role<SecurityDataType = unknown> extends HttpClient<SecurityDataTyp
     delFlag: ("Y" | "N"),
   \**
    * 创建时间
-   * @default 1730691246457
+   * @default 1731575784888
    *\
     createdAt: number,
   \**
    * 更新时间
-   * @default 1730691246457
+   * @default 1731575784888
    *\
     updatedAt: number,
   \** 创建人 *\
@@ -904,12 +904,12 @@ export class Role<SecurityDataType = unknown> extends HttpClient<SecurityDataTyp
           delFlag: 'Y' | 'N'
           /**
            * 创建时间
-           * @default 1730691246457
+           * @default 1731575784888
            */
           createdAt: number
           /**
            * 更新时间
-           * @default 1730691246457
+           * @default 1731575784888
            */
           updatedAt: number
           /** 创建人 */

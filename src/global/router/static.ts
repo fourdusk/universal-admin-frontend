@@ -2,7 +2,6 @@ import { WHETHER_TYPE } from '@/global/constant/common/index'
 import { RESOURCE_TYPE } from '@/global/constant/resource/index'
 import {
   HOME_ROUTER,
-  LAYOUT_ROUTER,
   PAGE_NOT_FOUND_ROUTER,
   PAGE_NOT_MATCH_ROUTER,
   ROOT_ROUTER,
@@ -10,6 +9,12 @@ import {
 } from '@/global/constant/router/index'
 
 import { RouterMeta } from './type'
+
+export const pageNotMatchRouter: RouteRecordRaw = {
+  path: PAGE_NOT_MATCH_ROUTER.path,
+  name: PAGE_NOT_MATCH_ROUTER.name,
+  redirect: { path: PAGE_NOT_FOUND_ROUTER.path }
+}
 
 export const staticRouter: RouteRecordRaw[] = [
   {
@@ -28,22 +33,6 @@ export const staticRouter: RouteRecordRaw[] = [
       status: WHETHER_TYPE.yes,
       isAffix: WHETHER_TYPE.yes,
       isCache: WHETHER_TYPE.yes,
-      isHide: WHETHER_TYPE.no,
-      isLink: WHETHER_TYPE.no
-    } as RouterMeta
-  },
-  {
-    path: LAYOUT_ROUTER.path,
-    name: LAYOUT_ROUTER.name,
-    redirect: { path: HOME_ROUTER.path },
-    meta: {
-      resourceType: RESOURCE_TYPE.page.value,
-      resourceNameEn: 'Layout',
-      resourceNameZhCn: '布局',
-      icon: null,
-      status: WHETHER_TYPE.yes,
-      isAffix: WHETHER_TYPE.no,
-      isCache: WHETHER_TYPE.no,
       isHide: WHETHER_TYPE.no,
       isLink: WHETHER_TYPE.no
     } as RouterMeta
@@ -81,9 +70,3 @@ export const staticRouter: RouteRecordRaw[] = [
     } as RouterMeta
   }
 ]
-
-export const pageNotMatchRouter: RouteRecordRaw = {
-  path: PAGE_NOT_MATCH_ROUTER.path,
-  name: PAGE_NOT_MATCH_ROUTER.name,
-  redirect: { path: PAGE_NOT_FOUND_ROUTER.path }
-}

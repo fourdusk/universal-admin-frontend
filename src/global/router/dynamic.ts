@@ -1,5 +1,3 @@
-import { LAYOUT_ROUTER } from '@/global/constant/router/index'
-
 import router from './index'
 import { pageNotMatchRouter } from './static'
 import { RouterMeta } from './type'
@@ -11,7 +9,7 @@ export const addDynamicRouter = () => {
   const pageResources = userStore.getPageResources()
   for (const item of pageResources) {
     const componentUrl = `/src/module${item.component as string}.vue`
-    router.addRoute(LAYOUT_ROUTER.name, {
+    router.addRoute({
       name: item.resourceCode,
       path: item.path as string,
       component: modules[componentUrl],

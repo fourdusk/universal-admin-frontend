@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { css } from 'styled/css'
-import { Auth } from 'swagger/api/Auth'
 import { Resource } from 'swagger/api/Resource'
 import { Role } from 'swagger/api/Role'
 import { User } from 'swagger/api/User'
@@ -46,12 +45,6 @@ const boxStyles = css({
   margin: '1rem 0'
 })
 
-const handleSignIn = async () => {
-  const auth = new Auth()
-  const result = await auth.postAuthSignIn({ username: username.value, password: password.value })
-  signInResult.value = result
-}
-
 const handleGetUserList = async () => {
   const user = new User()
   await user.postUserFind({})
@@ -94,7 +87,6 @@ const handleLangChange = (val: LangType) => {
       <input v-model="password" />
     </div>
     <div :class="boxStyles">
-      <button :class="buttonStyles" type="button" @click="handleSignIn">登录</button>
       <button :class="buttonStyles" type="button" @click="handleGetUserList">获取用户列表</button>
       <button :class="buttonStyles" type="button" @click="handleGetRoleList">获取角色列表</button>
       <button :class="buttonStyles" type="button" @click="handleGetResourceList">

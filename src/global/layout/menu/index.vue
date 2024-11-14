@@ -12,10 +12,14 @@ defineOptions({
 })
 
 defineProps<Props>()
+
+const route = useRoute()
+
+const defaultActive = computed(() => route.path)
 </script>
 
 <template>
-  <ElMenu style="width: 300px">
+  <ElMenu :default-active="defaultActive" style="width: 300px" router>
     <MenuItems :resources="resources" />
   </ElMenu>
 </template>

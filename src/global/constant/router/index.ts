@@ -18,11 +18,6 @@ export const PAGE_NOT_FOUND_ROUTER = {
   path: '/error/page-not-found'
 }
 
-export const LAYOUT_ROUTER = {
-  name: 'Layout',
-  path: '/layout'
-}
-
 export const SIGN_IN_ROUTER = {
   name: 'AuthSignIn',
   path: '/auth/sign-in'
