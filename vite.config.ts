@@ -13,6 +13,9 @@ import { defineConfig } from 'vite'
 const pathResolve = (dir: string) => resolve(process.cwd(), '.', dir)
 
 const config = defineConfig({
+  build: {
+    target: 'ES2022'
+  },
   resolve: {
     alias: {
       '@': pathResolve('src'),
